@@ -1,0 +1,20 @@
+# Software demonstration only: the bundled 301-frame trajectory is sampled every 100 ps
+# and is not suitable for scientific interpretation of residence, entropy, or ranking.
+# Paths are resolved relative to this file.
+topology: ../sample_traj/gromacs_traj/step3_input.psf
+trajectory:
+  - ../sample_traj/gromacs_traj/step5.xtc
+
+ligand_selection: resname 547
+
+start: 0
+stop: null
+step: 1
+
+water_cutoff: 5.0
+pocket_cutoff: 8.0
+
+output_dir: ../output
+
+temperature: 300.0
+max_gap: 0

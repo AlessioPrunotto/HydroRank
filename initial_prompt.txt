@@ -1,0 +1,4 @@
+The folder water-entropy/ has the following aim: given a molecular dynamics trajectory of a protein+ligand, it will evaluate the water molecules around the ligand, and in particular it will say which of them would be "entropically favorable" to remove (for the sake of increasing the potency of the ligand). This tool should be light, simple to use and computationally cheap, without sacrificing accuracy too much. Ideally, it should use mdtraj (or mdanalysis) and little other packages. It's an ambitious goal, but let's proceed step by step.
+Given the plan that is in the attached file, I now want to perform the first part of the plan, that is the preprocessing.
+The code that you produce should already be in a production form (i.e. publishable on github with the usual format, a src folder where all the code goes, etc).
+For the moment, give me a proposal of a detailed plan for the preprocessing: what would need to be done, what is the code that is required, 

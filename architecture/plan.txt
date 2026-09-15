@@ -1,0 +1,35 @@
+MD trajectory + topology
+        │
+        ▼
+  preprocessing
+  - select ligand
+  - select water oxygens
+  - optionally strip irrelevant atoms
+        │
+        ▼
+  identify water positions
+  around ligand
+        │
+        ▼
+  cluster water oxygen positions
+        │
+        ▼
+  hydration sites
+        │
+        ├───────────────┐
+        ▼               ▼
+  persistence        entropy proxy
+        │               │
+        └───────┬───────┘
+                ▼
+        hydration-site table
+
+
+
+POSSIBLE OUTPUT:
+
+Site | Occupancy | Persistence | Translational entropy | Orientational entropy | Overall disorder
+-------------------------------------------------------------------------------------------------
+H1   | 0.94      | 0.87        | 0.31                  | 0.18                  | 0.25
+H2   | 0.82      | 0.65        | 0.72                  | 0.81                  | 0.77
+H3   | 0.97      | 0.93        | 0.12                  | 0.09                  | 0.11
