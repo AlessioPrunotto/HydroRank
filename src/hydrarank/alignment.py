@@ -20,7 +20,7 @@ import numpy as np
 from MDAnalysis import AtomGroup, Universe
 from MDAnalysis.analysis.align import rotation_matrix
 
-from water_entropy.exceptions import EmptySelectionError
+from hydrarank.exceptions import EmptySelectionError
 
 
 @dataclass(frozen=True)

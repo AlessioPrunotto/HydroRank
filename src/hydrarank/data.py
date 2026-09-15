@@ -13,7 +13,7 @@ from typing import Any
 
 import numpy as np
 
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.exceptions import HydraRankError
 
 _FORMAT_VERSION = 3
 _SUPPORTED_FORMAT_VERSIONS = (2, 3)
@@ -47,7 +47,7 @@ class WaterObservations:
             # preprocessing always supplies the globally unique topology resindex.
             self.water_id = self.resid.copy()
         if self.oxygen.shape != (n_obs, 3):
-            raise WaterEntropyError(f"oxygen has shape {self.oxygen.shape}, expected {(n_obs, 3)}")
+            raise HydraRankError(f"oxygen has shape {self.oxygen.shape}, expected {(n_obs, 3)}")
         for name, expected in (
             ("hydrogen", (n_obs, 2, 3)),
             ("frame", (n_obs,)),
@@ -58,20 +58,20 @@ class WaterObservations:
         ):
             actual = getattr(self, name).shape
             if actual != expected:
-                raise WaterEntropyError(f"{name} has shape {actual}, expected {expected}")
+                raise HydraRankError(f"{name} has shape {actual}, expected {expected}")
         if self.frames.shape != self.times.shape or self.frames.shape != self.fit_rmsd.shape:
-            raise WaterEntropyError("frames, times and fit_rmsd must have the same length")
+            raise HydraRankError("frames, times and fit_rmsd must have the same length")
         if self.frames.ndim != 1:
-            raise WaterEntropyError("frames, times and fit_rmsd must be one-dimensional")
+            raise HydraRankError("frames, times and fit_rmsd must be one-dimensional")
         if self.n_frames < 1:
-            raise WaterEntropyError("frames must contain at least one trajectory frame")
+            raise HydraRankError("frames must contain at least one trajectory frame")
         for name in ("frame", "resid", "water_id", "frames"):
             if not np.issubdtype(getattr(self, name).dtype, np.integer):
-                raise WaterEntropyError(f"{name} must contain integers")
+                raise HydraRankError(f"{name} must contain integers")
         if self.ligand_reference.ndim != 2 or self.ligand_reference.shape[1] != 3:
-            raise WaterEntropyError("ligand_reference must have shape (n_ligand_heavy_atoms, 3)")
+            raise HydraRankError("ligand_reference must have shape (n_ligand_heavy_atoms, 3)")
         if n_obs and (np.min(self.frame) < 0 or np.max(self.frame) >= self.n_frames):
-            raise WaterEntropyError("observation frame indices fall outside the frames array")
+            raise HydraRankError("observation frame indices fall outside the frames array")
         for name in (
             "oxygen",
             "hydrogen",
@@ -82,17 +82,17 @@ class WaterObservations:
             "enclosure",
         ):
             if not np.all(np.isfinite(getattr(self, name))):
-                raise WaterEntropyError(f"{name} contains non-finite values")
+                raise HydraRankError(f"{name} contains non-finite values")
         if np.any(self.hb_solute < 0) or np.any(self.enclosure < 0):
-            raise WaterEntropyError("hb_solute and enclosure counts cannot be negative")
+            raise HydraRankError("hb_solute and enclosure counts cannot be negative")
         if self.frames.size > 1 and np.any(np.diff(self.frames) <= 0):
-            raise WaterEntropyError("source trajectory frame numbers must be strictly increasing")
+            raise HydraRankError("source trajectory frame numbers must be strictly increasing")
         if self.times.size > 1:
             intervals = np.diff(self.times)
             if np.any(intervals <= 0):
-                raise WaterEntropyError("trajectory times must be strictly increasing")
+                raise HydraRankError("trajectory times must be strictly increasing")
             if not np.allclose(intervals, intervals[0], rtol=1e-5, atol=1e-8):
-                raise WaterEntropyError(
+                raise HydraRankError(
                     "trajectory times are irregular; residence times require uniformly "
                     "sampled frames"
                 )
@@ -144,7 +144,7 @@ class WaterObservations:
             metadata = json.loads(str(data["metadata"]))
             version = metadata.pop("format_version", None)
             if version not in _SUPPORTED_FORMAT_VERSIONS:
-                raise WaterEntropyError(
+                raise HydraRankError(
                     f"unsupported observations format version {version}, expected one of "
                     f"{_SUPPORTED_FORMAT_VERSIONS}"
                 )

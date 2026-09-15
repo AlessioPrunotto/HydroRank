@@ -1,36 +1,65 @@
-"""Command-line interface for water-entropy."""
+"""HydraRank: hydration-site analysis and ligand-displacement ranking."""
 
 from __future__ import annotations
 
 import argparse
 import dataclasses
-import json
 import sys
 from pathlib import Path
 
-from water_entropy import __version__
-from water_entropy.analysis import analyse_sites, format_analysis
-from water_entropy.clustering import cluster_hydration_sites
-from water_entropy.config import PreprocessConfig
-from water_entropy.data import WaterObservations
-from water_entropy.exceptions import WaterEntropyError
-from water_entropy.export import write_csv, write_site_coordinates
-from water_entropy.io import describe_system, load_universe
-from water_entropy.plotting import write_analysis_plots, write_ranking_plot
-from water_entropy.preprocess import run_preprocess
-from water_entropy.qc import run_preprocess_qc
-from water_entropy.ranking import (
+from hydrarank import __version__
+from hydrarank.analysis import analyse_sites, format_analysis
+from hydrarank.clustering import cluster_hydration_sites
+from hydrarank.config import PreprocessConfig
+from hydrarank.data import WaterObservations
+from hydrarank.exceptions import HydraRankError
+from hydrarank.export import write_csv, write_site_coordinates
+from hydrarank.io import describe_system, load_universe
+from hydrarank.jsonio import dumps as json_dumps
+from hydrarank.plotting import write_analysis_plots, write_ranking_plot
+from hydrarank.preprocess import run_preprocess
+from hydrarank.qc import run_preprocess_qc
+from hydrarank.ranking import (
     DEFAULT_ENTROPY_THRESHOLD,
     DEFAULT_HBOND_THRESHOLD,
     format_ranking,
     rank_sites,
 )
+from hydrarank.workflow import run_analysis
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="water-entropy", description=__doc__)
+    parser = argparse.ArgumentParser(prog="hydrarank", description=__doc__)
     parser.add_argument("--version", action="version", version=__version__)
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    analyse = subparsers.add_parser(
+        "analyse",
+        aliases=["analyze"],
+        help="run the complete workflow and write a reproducible results directory",
+    )
+    _add_system_arguments(analyse)
+    _add_analysis_parameters(analyse)
+    _add_ranking_parameters(analyse)
+    analyse.add_argument(
+        "-o",
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="results directory (default: output_dir from config, or ./output)",
+    )
+    analyse.add_argument(
+        "--force", action="store_true", help="ignore a compatible observations cache"
+    )
+    analyse.add_argument(
+        "--allow-qc-failures",
+        action="store_true",
+        help="continue despite a split-solute QC failure (unsafe unless reviewed)",
+    )
+    analyse.add_argument(
+        "--plots", action="store_true", help="write plots (requires the plots extra)"
+    )
+    analyse.set_defaults(func=_cmd_analyse)
 
     info = subparsers.add_parser(
         "info", help="load a system, run the selections and print what was found"
@@ -67,37 +96,13 @@ def build_parser() -> argparse.ArgumentParser:
     rank = subparsers.add_parser("rank", help="rank hydration sites as ligand-displacement targets")
     _add_system_arguments(rank)
     _add_site_arguments(rank)
-    rank.add_argument(
-        "--hbond-penalty",
-        type=float,
-        default=None,
-        help="kcal/mol subtracted per mean solute hydrogen bond (default: config or 1.0)",
-    )
-    rank.add_argument(
-        "--entropy-threshold",
-        type=float,
-        default=DEFAULT_ENTROPY_THRESHOLD,
-        help="minimum -TdS for an ordered site (default: %(default)s kcal/mol)",
-    )
-    rank.add_argument(
-        "--hbond-threshold",
-        type=float,
-        default=DEFAULT_HBOND_THRESHOLD,
-        help="mean solute hydrogen bonds requiring replacement (default: %(default)s)",
-    )
-    rank.add_argument("--top", type=_positive_int, default=None, help="show only the top N sites")
+    _add_ranking_parameters(rank)
     rank.set_defaults(func=_cmd_rank)
     return parser
 
 
 def _add_site_arguments(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("--water-cutoff", type=float, default=None)
-    parser.add_argument("--pocket-cutoff", type=float, default=None)
-    parser.add_argument("--site-radius", type=float, default=None)
-    parser.add_argument("--density-factor", type=float, default=None)
-    parser.add_argument("--temperature", type=float, default=None)
-    parser.add_argument("--max-gap", type=int, default=None)
-    parser.add_argument("--max-sites", type=int, default=None)
+    _add_analysis_parameters(parser)
     parser.add_argument(
         "--observations",
         type=Path,
@@ -117,6 +122,38 @@ def _add_site_arguments(parser: argparse.ArgumentParser) -> None:
         default=None,
         help="write occupancy, residence and convergence plots to this directory",
     )
+
+
+def _add_analysis_parameters(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--water-cutoff", type=float, default=None)
+    parser.add_argument("--pocket-cutoff", type=float, default=None)
+    parser.add_argument("--site-radius", type=float, default=None)
+    parser.add_argument("--density-factor", type=float, default=None)
+    parser.add_argument("--temperature", type=float, default=None)
+    parser.add_argument("--max-gap", type=int, default=None)
+    parser.add_argument("--max-sites", type=int, default=None)
+
+
+def _add_ranking_parameters(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--hbond-penalty",
+        type=float,
+        default=None,
+        help="kcal/mol subtracted per mean solute hydrogen bond (default: config or 1.0)",
+    )
+    parser.add_argument(
+        "--entropy-threshold",
+        type=float,
+        default=DEFAULT_ENTROPY_THRESHOLD,
+        help="minimum -TdS for an ordered site (default: %(default)s kcal/mol)",
+    )
+    parser.add_argument(
+        "--hbond-threshold",
+        type=float,
+        default=DEFAULT_HBOND_THRESHOLD,
+        help="mean solute hydrogen bonds requiring replacement (default: %(default)s)",
+    )
+    parser.add_argument("--top", type=_positive_int, default=None, help="show only the top N sites")
 
 
 def _positive_int(value: str) -> int:
@@ -168,7 +205,26 @@ def _config_from_args(args: argparse.Namespace) -> PreprocessConfig:
 
 
 def _emit(report, as_json: bool) -> int:
-    print(json.dumps(report.to_dict(), indent=2) if as_json else report)
+    print(json_dumps(report.to_dict(), indent=2) if as_json else report)
+    return 0
+
+
+def _cmd_analyse(args: argparse.Namespace) -> int:
+    config = _config_from_args(args)
+    if args.output_dir is not None:
+        config = dataclasses.replace(config, output_dir=args.output_dir)
+    result = run_analysis(
+        config,
+        max_sites=args.max_sites,
+        hbond_penalty=args.hbond_penalty,
+        entropy_threshold=args.entropy_threshold,
+        hbond_threshold=args.hbond_threshold,
+        force=args.force,
+        allow_qc_failures=args.allow_qc_failures,
+        plots=args.plots,
+        progress=_progress_reporter(args.no_progress),
+    )
+    print(json_dumps(result.to_dict(), indent=2) if args.json else result.format(top=args.top))
     return 0
 
 
@@ -201,7 +257,7 @@ def _cmd_sites(args: argparse.Namespace) -> int:
     config = _config_from_args(args)
     analysis = _analysis_from_args(args, config)
     if args.json:
-        print(json.dumps(analysis.to_dict(), indent=2))
+        print(json_dumps(analysis.to_dict(), indent=2))
     else:
         print(format_analysis(analysis))
     _write_site_artifacts(analysis.rows(), analysis, args)
@@ -238,7 +294,7 @@ def _cmd_rank(args: argparse.Namespace) -> int:
         hbond_threshold=args.hbond_threshold,
     )
     if args.json:
-        print(json.dumps(ranking.to_dict(top=args.top), indent=2))
+        print(json_dumps(ranking.to_dict(top=args.top), indent=2))
     else:
         print(format_ranking(ranking, top=args.top))
     rows = ranking.rows()
@@ -287,7 +343,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         return args.func(args)
-    except (WaterEntropyError, FileNotFoundError) as error:
+    except (HydraRankError, OSError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
 

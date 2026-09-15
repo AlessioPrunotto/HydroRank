@@ -18,7 +18,7 @@ from MDAnalysis import AtomGroup
 from MDAnalysis.exceptions import NoDataError
 from MDAnalysis.lib.distances import capped_distance
 
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.exceptions import HydraRankError
 
 DEFAULT_HBOND_DISTANCE = 3.5
 DEFAULT_HBOND_ANGLE = 130.0
@@ -50,12 +50,12 @@ def find_polar_groups(atoms: AtomGroup) -> PolarGroups:
     try:
         masses = universe.atoms.masses
     except (NoDataError, AttributeError):
-        raise WaterEntropyError(
+        raise HydraRankError(
             "hydrogen-bond analysis requires atom masses to identify hydrogens and polar atoms; "
             "use a topology with masses (such as PSF, TPR or prmtop)"
         ) from None
     if masses.size != universe.atoms.n_atoms or not np.any(masses > 0):
-        raise WaterEntropyError(
+        raise HydraRankError(
             "hydrogen-bond analysis requires valid atom masses; the topology contains none"
         )
     polar = _is_polar(masses)

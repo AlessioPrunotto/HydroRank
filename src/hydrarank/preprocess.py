@@ -14,23 +14,24 @@ import numpy as np
 from MDAnalysis import AtomGroup, Universe
 from MDAnalysis.lib.distances import capped_distance
 
-from water_entropy.alignment import SiteAligner, build_reference, select_alignment_group
-from water_entropy.config import PreprocessConfig
-from water_entropy.data import WaterObservations
-from water_entropy.hbonds import (
+from hydrarank.alignment import SiteAligner, build_reference, select_alignment_group
+from hydrarank.config import PreprocessConfig
+from hydrarank.data import WaterObservations
+from hydrarank.hbonds import (
     PolarGroups,
     count_hbonds,
     count_neighbours,
     find_polar_groups,
 )
-from water_entropy.io import frame_slice
-from water_entropy.pbc import (
+from hydrarank.io import frame_slice
+from hydrarank.pbc import (
     PBCGroups,
     apply_pbc_transformations,
     build_pbc_groups,
+    max_bond_length,
     validate_cutoff,
 )
-from water_entropy.selections import (
+from hydrarank.selections import (
     WaterTopology,
     analyse_water_topology,
     classify_atoms,
@@ -112,8 +113,9 @@ def run_preprocess(
     universe: Universe,
     config: PreprocessConfig,
     progress: Callable[[int, int], None] | None = None,
+    collect_qc: bool = False,
 ) -> WaterObservations:
-    """Extract the aligned first-shell water molecules frame by frame."""
+    """Extract aligned first-shell waters, optionally collecting QC in the same pass."""
     system = prepare_system(universe, config)
     hydrogens = system.universe.atoms[system.water.hydrogen_ix.ravel()]
 
@@ -126,6 +128,7 @@ def run_preprocess(
     )
     hbond_chunks, enclosure_chunks = [], []
     source_frames, times, rmsds = [], [], []
+    longest_bonds, shell_counts = [], []
 
     for index, ts in enumerate(system.universe.trajectory[system.frames]):
         motion = system.aligner.fit(system.fit_group.positions)
@@ -142,6 +145,9 @@ def run_preprocess(
         source_frames.append(ts.frame)
         times.append(float(ts.time))
         rmsds.append(motion.rmsd)
+        if collect_qc:
+            longest_bonds.append(max_bond_length(system.groups.solute))
+            shell_counts.append(int(selected.size))
         if progress is not None:
             progress(index + 1, system.n_selected_frames)
         if selected.size == 0:
@@ -191,6 +197,14 @@ def run_preprocess(
             "ligand_selection": config.ligand_selection,
             "topology": str(config.topology),
             "trajectory": [str(p) for p in config.trajectory],
+            **(
+                {
+                    "qc_longest_bond": longest_bonds,
+                    "qc_n_shell_waters": shell_counts,
+                }
+                if collect_qc
+                else {}
+            ),
         },
     )
 

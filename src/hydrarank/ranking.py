@@ -20,8 +20,8 @@ from typing import Any
 
 import numpy as np
 
-from water_entropy.analysis import SiteAnalysis
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.analysis import SiteAnalysis
+from hydrarank.exceptions import HydraRankError
 
 #: Ordered and weakly bound: displacing it should pay off directly.
 DISPLACEABLE = "displaceable"
@@ -80,11 +80,11 @@ def rank_sites(
 ) -> SiteRanking:
     """Score and classify every hydration site as a displacement target."""
     if hbond_penalty < 0:
-        raise WaterEntropyError(f"hbond_penalty must be >= 0, got {hbond_penalty}")
+        raise HydraRankError(f"hbond_penalty must be >= 0, got {hbond_penalty}")
     if entropy_threshold < 0:
-        raise WaterEntropyError(f"entropy_threshold must be >= 0, got {entropy_threshold}")
+        raise HydraRankError(f"entropy_threshold must be >= 0, got {entropy_threshold}")
     if hbond_threshold < 0:
-        raise WaterEntropyError(f"hbond_threshold must be >= 0, got {hbond_threshold}")
+        raise HydraRankError(f"hbond_threshold must be >= 0, got {hbond_threshold}")
     entropy_gain = analysis.minus_t_delta_s
     score = entropy_gain - hbond_penalty * analysis.hb_solute
 

@@ -10,9 +10,9 @@ from typing import Any
 import numpy as np
 from MDAnalysis import Universe
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.exceptions import TrajectoryError
-from water_entropy.selections import (
+from hydrarank.config import PreprocessConfig
+from hydrarank.exceptions import TrajectoryError
+from hydrarank.selections import (
     WaterTopology,
     analyse_water_topology,
     classify_atoms,

@@ -2,24 +2,28 @@
 
 from importlib.metadata import PackageNotFoundError, version
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.exceptions import (
+from hydrarank.config import PreprocessConfig
+from hydrarank.exceptions import (
     AmbiguousSelectionError,
     EmptySelectionError,
-    WaterEntropyError,
+    HydraRankError,
     WaterModelError,
 )
 
 try:
-    __version__ = version("water-entropy")
+    __version__ = version("hydrarank")
 except PackageNotFoundError:  # source tree imported without installation
     __version__ = "0+unknown"
 
+from hydrarank.workflow import AnalyseResult, run_analysis  # noqa: E402
+
 __all__ = [
     "AmbiguousSelectionError",
+    "AnalyseResult",
     "EmptySelectionError",
     "PreprocessConfig",
-    "WaterEntropyError",
+    "HydraRankError",
     "WaterModelError",
     "__version__",
+    "run_analysis",
 ]

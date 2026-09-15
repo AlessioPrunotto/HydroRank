@@ -6,10 +6,10 @@ from pathlib import Path
 
 import numpy as np
 
-from water_entropy.analysis import SiteAnalysis
-from water_entropy.entropy import minus_t_delta_s, orientational_entropy, translational_entropy
-from water_entropy.exceptions import WaterEntropyError
-from water_entropy.ranking import SiteRanking
+from hydrarank.analysis import SiteAnalysis
+from hydrarank.entropy import minus_t_delta_s, orientational_entropy, translational_entropy
+from hydrarank.exceptions import HydraRankError
+from hydrarank.ranking import SiteRanking
 
 
 def write_analysis_plots(analysis: SiteAnalysis, output_dir: str | Path) -> list[Path]:
@@ -90,7 +90,7 @@ def _plot_convergence(analysis, path, plt):
     values = np.full((checkpoints.size, analysis.n_sites), np.nan)
     orientations = None
     if observations.n_observations:
-        from water_entropy.entropy import water_orientations
+        from hydrarank.entropy import water_orientations
 
         orientations = water_orientations(observations.oxygen, observations.hydrogen)
     for row, stop in enumerate(checkpoints):
@@ -131,7 +131,7 @@ def _pyplot():
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        raise WaterEntropyError(
+        raise HydraRankError(
             "plotting requires the optional dependencies; install with 'uv sync --extra plots'"
         ) from None
     return plt

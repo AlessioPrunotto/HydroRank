@@ -14,8 +14,8 @@ import numpy as np
 from MDAnalysis import AtomGroup, Universe
 from MDAnalysis.exceptions import NoDataError
 
-from water_entropy.config import DEFAULT_ION_RESNAMES, DEFAULT_WATER_RESNAMES
-from water_entropy.exceptions import (
+from hydrarank.config import DEFAULT_ION_RESNAMES, DEFAULT_WATER_RESNAMES
+from hydrarank.exceptions import (
     AmbiguousSelectionError,
     EmptySelectionError,
     WaterModelError,

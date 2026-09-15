@@ -20,7 +20,7 @@ import numpy as np
 from MDAnalysis import AtomGroup, Universe
 from MDAnalysis.transformations import center_in_box, unwrap, wrap
 
-from water_entropy.exceptions import TrajectoryError, WaterEntropyError
+from hydrarank.exceptions import HydraRankError, TrajectoryError
 
 #: A whole molecule cannot contain a covalent bond longer than this (angstrom).
 MAX_BOND_LENGTH = 3.0
@@ -54,7 +54,7 @@ def apply_pbc_transformations(
     Returns the same universe, mutated. Can only be called once per trajectory.
     """
     if universe.trajectory.transformations:
-        raise WaterEntropyError("transformations have already been applied to this trajectory")
+        raise HydraRankError("transformations have already been applied to this trajectory")
     _require_box(universe)
     _require_bonds(universe, groups.solute, guess_bonds)
 
@@ -73,7 +73,7 @@ def validate_cutoff(universe: Universe, cutoff: float, name: str = "cutoff") -> 
         raise TrajectoryError("no box information; cannot validate the cutoff")
     half_box = float(np.min(box[:3])) / 2.0
     if cutoff >= half_box:
-        raise WaterEntropyError(
+        raise HydraRankError(
             f"{name} {cutoff:g} A is not smaller than half the shortest box vector "
             f"({half_box:g} A); the minimum-image convention would be violated"
         )
@@ -94,7 +94,7 @@ def max_bond_length(atoms: AtomGroup) -> float:
 def assert_solute_whole(atoms: AtomGroup, tolerance: float = MAX_BOND_LENGTH) -> None:
     longest = max_bond_length(atoms)
     if longest > tolerance:
-        raise WaterEntropyError(
+        raise HydraRankError(
             f"solute is not whole: longest bond is {longest:.2f} A (> {tolerance:.2f} A). "
             "The unwrap step failed, most likely because of missing or wrong bond information."
         )

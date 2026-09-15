@@ -13,9 +13,11 @@ import numpy as np
 from MDAnalysis import Universe
 from MDAnalysis.lib.distances import capped_distance
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.pbc import MAX_BOND_LENGTH, max_bond_length
-from water_entropy.preprocess import prepare_system
+from hydrarank.config import PreprocessConfig
+from hydrarank.data import WaterObservations
+from hydrarank.exceptions import HydraRankError
+from hydrarank.pbc import MAX_BOND_LENGTH, max_bond_length
+from hydrarank.preprocess import prepare_system
 
 
 @dataclass
@@ -103,4 +105,33 @@ def run_preprocess_qc(universe: Universe, config: PreprocessConfig) -> Preproces
         n_fit_atoms=system.fit_group.n_atoms,
         reference_frame=system.reference_frame,
         water_cutoff=config.water_cutoff,
+    )
+
+
+def qc_from_observations(observations: WaterObservations) -> PreprocessQC:
+    """Reconstruct QC collected during preprocessing without rereading the trajectory."""
+    metadata = observations.metadata
+    try:
+        longest_bond = np.asarray(metadata["qc_longest_bond"], dtype=float)
+        n_shell_waters = np.asarray(metadata["qc_n_shell_waters"], dtype=int)
+        n_fit_atoms = int(metadata["n_fit_atoms"])
+        reference_frame = int(metadata["reference_frame"])
+        water_cutoff = float(metadata["water_cutoff"])
+    except (KeyError, TypeError, ValueError) as error:
+        raise HydraRankError(
+            "the observations cache does not contain preprocessing QC; regenerate it with "
+            "'hydrarank analyse --force'"
+        ) from error
+    if longest_bond.shape != observations.frames.shape:
+        raise HydraRankError("cached longest-bond QC does not match the selected frame count")
+    if n_shell_waters.shape != observations.frames.shape:
+        raise HydraRankError("cached water-shell QC does not match the selected frame count")
+    return PreprocessQC(
+        frames=observations.frames,
+        fit_rmsd=observations.fit_rmsd,
+        longest_bond=longest_bond,
+        n_shell_waters=n_shell_waters,
+        n_fit_atoms=n_fit_atoms,
+        reference_frame=reference_frame,
+        water_cutoff=water_cutoff,
     )

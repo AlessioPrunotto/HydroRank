@@ -9,7 +9,7 @@ from typing import Any
 
 import yaml
 
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.exceptions import HydraRankError
 
 #: Residue names used for water by the common force fields / MD engines.
 #: Deliberately explicit: MDAnalysis' and MDTraj's built-in ``water`` keywords
@@ -124,37 +124,37 @@ class PreprocessConfig:
 
     def __post_init__(self) -> None:
         if self.step < 1:
-            raise WaterEntropyError(f"step must be >= 1, got {self.step}")
+            raise HydraRankError(f"step must be >= 1, got {self.step}")
         if self.start < 0:
-            raise WaterEntropyError(f"start must be >= 0, got {self.start}")
+            raise HydraRankError(f"start must be >= 0, got {self.start}")
         if self.stop is not None and self.stop <= self.start:
-            raise WaterEntropyError(
+            raise HydraRankError(
                 f"stop must be greater than start (got start={self.start}, stop={self.stop})"
             )
         if self.min_ligand_heavy_atoms < 1:
-            raise WaterEntropyError(
+            raise HydraRankError(
                 f"min_ligand_heavy_atoms must be >= 1, got {self.min_ligand_heavy_atoms}"
             )
         if self.temperature <= 0:
-            raise WaterEntropyError(f"temperature must be > 0, got {self.temperature}")
+            raise HydraRankError(f"temperature must be > 0, got {self.temperature}")
         if self.max_gap < 0:
-            raise WaterEntropyError(f"max_gap must be >= 0, got {self.max_gap}")
+            raise HydraRankError(f"max_gap must be >= 0, got {self.max_gap}")
         if self.hbond_distance <= 0:
-            raise WaterEntropyError(f"hbond_distance must be > 0, got {self.hbond_distance}")
+            raise HydraRankError(f"hbond_distance must be > 0, got {self.hbond_distance}")
         if not 0.0 <= self.hbond_angle <= 180.0:
-            raise WaterEntropyError(f"hbond_angle must be in [0, 180], got {self.hbond_angle}")
+            raise HydraRankError(f"hbond_angle must be in [0, 180], got {self.hbond_angle}")
         if self.enclosure_radius <= 0:
-            raise WaterEntropyError(f"enclosure_radius must be > 0, got {self.enclosure_radius}")
+            raise HydraRankError(f"enclosure_radius must be > 0, got {self.enclosure_radius}")
         if self.hbond_penalty < 0:
-            raise WaterEntropyError(f"hbond_penalty must be >= 0, got {self.hbond_penalty}")
+            raise HydraRankError(f"hbond_penalty must be >= 0, got {self.hbond_penalty}")
         if self.water_cutoff <= 0:
-            raise WaterEntropyError(f"water_cutoff must be > 0, got {self.water_cutoff}")
+            raise HydraRankError(f"water_cutoff must be > 0, got {self.water_cutoff}")
         if self.site_radius <= 0:
-            raise WaterEntropyError(f"site_radius must be > 0, got {self.site_radius}")
+            raise HydraRankError(f"site_radius must be > 0, got {self.site_radius}")
         if self.density_factor <= 0:
-            raise WaterEntropyError(f"density_factor must be > 0, got {self.density_factor}")
+            raise HydraRankError(f"density_factor must be > 0, got {self.density_factor}")
         if self.pocket_cutoff < self.water_cutoff:
-            raise WaterEntropyError(
+            raise HydraRankError(
                 "pocket_cutoff must be >= water_cutoff so that every retained water "
                 f"is surrounded by pocket atoms (got {self.pocket_cutoff} < {self.water_cutoff})"
             )
@@ -165,7 +165,7 @@ class PreprocessConfig:
         with path.open() as handle:
             raw = yaml.safe_load(handle) or {}
         if not isinstance(raw, dict):
-            raise WaterEntropyError(f"{path} must contain a YAML mapping")
+            raise HydraRankError(f"{path} must contain a YAML mapping")
         return cls.from_dict(raw, base_dir=path.parent)
 
     @classmethod
@@ -173,13 +173,13 @@ class PreprocessConfig:
         known = {f.name for f in dataclasses.fields(cls)}
         unknown = set(raw) - known
         if unknown:
-            raise WaterEntropyError(f"unknown configuration keys: {sorted(unknown)}")
+            raise HydraRankError(f"unknown configuration keys: {sorted(unknown)}")
 
         data = dict(raw)
         base = Path(base_dir) if base_dir is not None else Path()
 
         if "topology" not in data:
-            raise WaterEntropyError("configuration must define 'topology'")
+            raise HydraRankError("configuration must define 'topology'")
         data["topology"] = _resolve(data["topology"], base)
 
         traj = data.get("trajectory") or []

@@ -16,9 +16,9 @@ from typing import Any
 import numpy as np
 from scipy.spatial import cKDTree
 
-from water_entropy.data import WaterObservations
-from water_entropy.entropy import BULK_WATER_DENSITY
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.data import WaterObservations
+from hydrarank.entropy import BULK_WATER_DENSITY
+from hydrarank.exceptions import HydraRankError
 
 #: Radius of a hydration site: roughly half the O-O distance of two hydrogen-bonded
 #: waters, so that two sites cannot describe the same water.
@@ -37,23 +37,21 @@ class HydrationSites:
 
     def __post_init__(self) -> None:
         if self.centers.ndim != 2 or self.centers.shape[1] != 3:
-            raise WaterEntropyError(
-                f"centers must have shape (n_sites, 3), got {self.centers.shape}"
-            )
+            raise HydraRankError(f"centers must have shape (n_sites, 3), got {self.centers.shape}")
         if self.labels.ndim != 1:
-            raise WaterEntropyError("labels must be one-dimensional")
+            raise HydraRankError("labels must be one-dimensional")
         if not np.issubdtype(self.labels.dtype, np.integer):
-            raise WaterEntropyError("labels must contain integers")
+            raise HydraRankError("labels must contain integers")
         if self.radius <= 0:
-            raise WaterEntropyError(f"radius must be > 0, got {self.radius}")
+            raise HydraRankError(f"radius must be > 0, got {self.radius}")
         if self.n_frames < 1:
-            raise WaterEntropyError(f"n_frames must be >= 1, got {self.n_frames}")
+            raise HydraRankError(f"n_frames must be >= 1, got {self.n_frames}")
         if self.min_count < 1:
-            raise WaterEntropyError(f"min_count must be >= 1, got {self.min_count}")
+            raise HydraRankError(f"min_count must be >= 1, got {self.min_count}")
         if not np.all(np.isfinite(self.centers)):
-            raise WaterEntropyError("centers contain non-finite values")
+            raise HydraRankError("centers contain non-finite values")
         if self.labels.size and (np.min(self.labels) < -1 or np.max(self.labels) >= self.n_sites):
-            raise WaterEntropyError("labels contain an invalid site index")
+            raise HydraRankError("labels contain an invalid site index")
 
     @property
     def n_sites(self) -> int:
@@ -121,11 +119,11 @@ def bulk_equivalent_count(n_frames: int, radius: float, density_factor: float = 
     information about the pocket.
     """
     if n_frames < 1:
-        raise WaterEntropyError(f"n_frames must be >= 1, got {n_frames}")
+        raise HydraRankError(f"n_frames must be >= 1, got {n_frames}")
     if radius <= 0:
-        raise WaterEntropyError(f"radius must be > 0, got {radius}")
+        raise HydraRankError(f"radius must be > 0, got {radius}")
     if density_factor <= 0:
-        raise WaterEntropyError(f"density_factor must be > 0, got {density_factor}")
+        raise HydraRankError(f"density_factor must be > 0, got {density_factor}")
     volume = 4.0 / 3.0 * np.pi * radius**3
     return max(1, int(np.ceil(density_factor * BULK_WATER_DENSITY * volume * n_frames)))
 
@@ -143,13 +141,13 @@ def cluster_positions(
     """
     positions = np.asarray(positions, dtype=np.float64)
     if positions.ndim != 2 or positions.shape[1] != 3:
-        raise WaterEntropyError(f"expected an (n, 3) array of positions, got {positions.shape}")
+        raise HydraRankError(f"expected an (n, 3) array of positions, got {positions.shape}")
     if radius <= 0:
-        raise WaterEntropyError(f"radius must be > 0, got {radius}")
+        raise HydraRankError(f"radius must be > 0, got {radius}")
     if min_count < 1:
-        raise WaterEntropyError(f"min_count must be >= 1, got {min_count}")
+        raise HydraRankError(f"min_count must be >= 1, got {min_count}")
     if max_sites is not None and max_sites < 1:
-        raise WaterEntropyError(f"max_sites must be >= 1, got {max_sites}")
+        raise HydraRankError(f"max_sites must be >= 1, got {max_sites}")
 
     n_points = positions.shape[0]
     labels = np.full(n_points, -1, dtype=np.int64)

@@ -7,16 +7,16 @@ from typing import Any
 
 import numpy as np
 
-from water_entropy.clustering import HydrationSites
-from water_entropy.data import WaterObservations
-from water_entropy.entropy import (
+from hydrarank.clustering import HydrationSites
+from hydrarank.data import WaterObservations
+from hydrarank.entropy import (
     MIN_SAMPLES,
     minus_t_delta_s,
     orientational_entropy,
     translational_entropy,
     water_orientations,
 )
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.exceptions import HydraRankError
 
 
 @dataclass(frozen=True)
@@ -132,12 +132,12 @@ def analyse_sites(
 ) -> SiteAnalysis:
     """Compute occupancy, persistence and entropy proxies for every hydration site."""
     if sites.labels.shape != (observations.n_observations,):
-        raise WaterEntropyError(
+        raise HydraRankError(
             "site labels must contain one entry per water observation "
             f"({sites.labels.size} != {observations.n_observations})"
         )
     if sites.n_frames != observations.n_frames:
-        raise WaterEntropyError(
+        raise HydraRankError(
             f"sites and observations disagree on frame count ({sites.n_frames} != "
             f"{observations.n_frames})"
         )
