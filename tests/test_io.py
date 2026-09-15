@@ -1,8 +1,8 @@
 import pytest
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.exceptions import TrajectoryError
-from water_entropy.io import describe_system, frame_slice
+from hydrarank.config import PreprocessConfig
+from hydrarank.exceptions import TrajectoryError
+from hydrarank.io import describe_system, frame_slice
 
 
 @pytest.fixture

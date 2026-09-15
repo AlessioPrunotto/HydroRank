@@ -1,8 +1,8 @@
-from water_entropy.analysis import analyse_sites
-from water_entropy.clustering import cluster_hydration_sites
-from water_entropy.config import PreprocessConfig
-from water_entropy.preprocess import run_preprocess
-from water_entropy.ranking import rank_sites
+from hydrarank.analysis import analyse_sites
+from hydrarank.clustering import cluster_hydration_sites
+from hydrarank.config import PreprocessConfig
+from hydrarank.preprocess import run_preprocess
+from hydrarank.ranking import rank_sites
 
 
 def test_compact_in_memory_pipeline_runs_end_to_end(pocket_system, tmp_path):

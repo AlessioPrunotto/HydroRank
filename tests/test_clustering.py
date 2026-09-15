@@ -1,14 +1,14 @@
 import numpy as np
 import pytest
 
-from water_entropy.clustering import (
+from hydrarank.clustering import (
     HydrationSites,
     bulk_equivalent_count,
     cluster_hydration_sites,
     cluster_positions,
 )
-from water_entropy.data import WaterObservations
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.data import WaterObservations
+from hydrarank.exceptions import HydraRankError
 
 
 def _blobs(centers, per_blob=40, sigma=0.25, seed=0):
@@ -84,7 +84,7 @@ def test_empty_input():
     [(np.zeros((4, 2)), 1.0), (np.zeros((4, 3)), 0.0)],
 )
 def test_invalid_input_rejected(positions, radius):
-    with pytest.raises(WaterEntropyError):
+    with pytest.raises(HydraRankError):
         cluster_positions(positions, radius=radius)
 
 
@@ -103,13 +103,13 @@ def test_bulk_threshold_scales_with_frames_and_volume():
     ],
 )
 def test_bulk_threshold_rejects_invalid_inputs(kwargs):
-    with pytest.raises(WaterEntropyError):
+    with pytest.raises(HydraRankError):
         bulk_equivalent_count(**kwargs)
 
 
 @pytest.mark.parametrize("kwargs", [{"min_count": 0}, {"max_sites": 0}])
 def test_clustering_rejects_invalid_limits(kwargs):
-    with pytest.raises(WaterEntropyError):
+    with pytest.raises(HydraRankError):
         cluster_positions(np.zeros((2, 3)), **kwargs)
 
 
@@ -131,7 +131,7 @@ def test_hydration_sites_validate_their_data(kwargs):
         "min_count": 1,
     }
     values.update(kwargs)
-    with pytest.raises(WaterEntropyError):
+    with pytest.raises(HydraRankError):
         HydrationSites(**values)
 
 

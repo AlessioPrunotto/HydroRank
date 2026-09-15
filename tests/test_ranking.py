@@ -3,8 +3,8 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-from water_entropy.exceptions import WaterEntropyError
-from water_entropy.ranking import (
+from hydrarank.exceptions import HydraRankError
+from hydrarank.ranking import (
     BULK_LIKE,
     DISPLACEABLE,
     REPLACE_HBONDS,
@@ -66,5 +66,5 @@ def test_ties_are_stable_and_nan_scores_sort_last():
     ],
 )
 def test_ranking_rejects_negative_parameters(kwargs):
-    with pytest.raises(WaterEntropyError, match="must be >= 0"):
+    with pytest.raises(HydraRankError, match="must be >= 0"):
         rank_sites(_analysis(), **kwargs)

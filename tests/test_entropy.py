@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 from scipy.spatial.transform import Rotation
 
-from water_entropy.entropy import (
+from hydrarank.entropy import (
     BULK_WATER_DENSITY,
     GAS_CONSTANT,
     minus_t_delta_s,

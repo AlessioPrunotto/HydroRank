@@ -2,14 +2,14 @@ import numpy as np
 import pytest
 from MDAnalysis.lib.transformations import rotation_matrix as rotation_about_axis
 
-from water_entropy.alignment import (
+from hydrarank.alignment import (
     AlignmentReference,
     SiteAligner,
     build_reference,
     iter_alignment_rmsd,
     select_alignment_group,
 )
-from water_entropy.exceptions import EmptySelectionError
+from hydrarank.exceptions import EmptySelectionError
 
 ALA = [("N", 14.007), ("CA", 12.011), ("C", 12.011), ("O", 15.999), ("CB", 12.011)]
 LIGAND = ("547", [(f"C{i}", 12.011) for i in range(4)])

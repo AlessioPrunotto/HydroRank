@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.qc import run_preprocess_qc
+from hydrarank.config import PreprocessConfig
+from hydrarank.qc import run_preprocess_qc
 
 N_RESIDUES = 4
 

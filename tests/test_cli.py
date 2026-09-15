@@ -2,8 +2,8 @@ import json
 
 import numpy as np
 
-import water_entropy.cli as cli
-from water_entropy.data import WaterObservations
+import hydrarank.cli as cli
+from hydrarank.data import WaterObservations
 
 
 class _Report:
@@ -39,6 +39,46 @@ def test_info_command_emits_json(monkeypatch, capsys):
 
     assert cli.main(["info", "-s", "top.psf", "--json"]) == 0
     assert json.loads(capsys.readouterr().out) == {"ok": True}
+
+
+def test_analyse_command_runs_unified_workflow(monkeypatch, tmp_path, capsys):
+    class Result:
+        def to_dict(self):
+            return {"workflow": "complete"}
+
+        def format(self, top=None):
+            return f"complete (top={top})"
+
+    captured = {}
+
+    def run_analysis(config, **kwargs):
+        captured["config"] = config
+        captured.update(kwargs)
+        return Result()
+
+    monkeypatch.setattr(cli, "run_analysis", run_analysis)
+    output = tmp_path / "bundle"
+    assert (
+        cli.main(
+            [
+                "analyse",
+                "-s",
+                "top.psf",
+                "-f",
+                "traj.xtc",
+                "-l",
+                "resname LIG",
+                "-o",
+                str(output),
+                "--top",
+                "5",
+            ]
+        )
+        == 0
+    )
+    assert capsys.readouterr().out.strip() == "complete (top=5)"
+    assert [str(path) for path in captured["config"].trajectory] == ["traj.xtc"]
+    assert captured["config"].output_dir == output
 
 
 def test_check_command_emits_report(monkeypatch, capsys):

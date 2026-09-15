@@ -1,8 +1,8 @@
 import pytest
 import yaml
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.config import PreprocessConfig
+from hydrarank.exceptions import HydraRankError
 
 
 def test_roundtrip_yaml(tmp_path):
@@ -27,7 +27,7 @@ def test_relative_paths_resolved_against_config_location(tmp_path):
 
 
 def test_unknown_key_rejected(tmp_path):
-    with pytest.raises(WaterEntropyError, match="unknown configuration keys"):
+    with pytest.raises(HydraRankError, match="unknown configuration keys"):
         PreprocessConfig.from_dict({"topology": "a.psf", "typo": 1}, base_dir=tmp_path)
 
 
@@ -44,5 +44,5 @@ def test_unknown_key_rejected(tmp_path):
     ],
 )
 def test_invalid_values_rejected(tmp_path, kwargs):
-    with pytest.raises(WaterEntropyError):
+    with pytest.raises(HydraRankError):
         PreprocessConfig(topology=tmp_path / "top.psf", **kwargs)

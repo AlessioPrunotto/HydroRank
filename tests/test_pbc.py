@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from water_entropy.exceptions import TrajectoryError, WaterEntropyError
-from water_entropy.pbc import (
+from hydrarank.exceptions import HydraRankError, TrajectoryError
+from hydrarank.pbc import (
     apply_pbc_transformations,
     assert_solute_whole,
     build_pbc_groups,
@@ -44,7 +44,7 @@ def straddling_system(build_universe):
 def test_solute_is_split_before_transformation(straddling_system):
     ligand = straddling_system.select_atoms("resname 547")
     assert max_bond_length(ligand) > 3.0
-    with pytest.raises(WaterEntropyError, match="not whole"):
+    with pytest.raises(HydraRankError, match="not whole"):
         assert_solute_whole(ligand)
 
 
@@ -75,7 +75,7 @@ def test_transformations_applied_only_once(straddling_system):
     ligand = straddling_system.select_atoms("resname 547")
     groups = build_pbc_groups(straddling_system, ligand)
     apply_pbc_transformations(straddling_system, groups)
-    with pytest.raises(WaterEntropyError, match="already been applied"):
+    with pytest.raises(HydraRankError, match="already been applied"):
         apply_pbc_transformations(straddling_system, groups)
 
 
@@ -96,5 +96,5 @@ def test_guessed_bonds_allow_unwrapping(build_universe):
 
 def test_validate_cutoff(straddling_system):
     validate_cutoff(straddling_system, 5.0)
-    with pytest.raises(WaterEntropyError, match="pocket_cutoff.*minimum-image"):
+    with pytest.raises(HydraRankError, match="pocket_cutoff.*minimum-image"):
         validate_cutoff(straddling_system, 25.0, name="pocket_cutoff")

@@ -1,10 +1,10 @@
 import numpy as np
 
-from water_entropy.analysis import analyse_sites
-from water_entropy.clustering import HydrationSites
-from water_entropy.data import WaterObservations
-from water_entropy.plotting import write_analysis_plots, write_ranking_plot
-from water_entropy.ranking import rank_sites
+from hydrarank.analysis import analyse_sites
+from hydrarank.clustering import HydrationSites
+from hydrarank.data import WaterObservations
+from hydrarank.plotting import write_analysis_plots, write_ranking_plot
+from hydrarank.ranking import rank_sites
 
 
 def _analysis():

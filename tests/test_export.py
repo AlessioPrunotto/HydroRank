@@ -2,8 +2,8 @@ import csv
 
 import pytest
 
-from water_entropy.exceptions import WaterEntropyError
-from water_entropy.export import write_csv, write_site_coordinates
+from hydrarank.exceptions import HydraRankError
+from hydrarank.export import write_csv, write_site_coordinates
 
 ROWS = [
     {
@@ -32,7 +32,7 @@ def test_write_site_coordinates(tmp_path, suffix, marker):
 
 
 def test_export_rejects_empty_rows_and_unknown_coordinate_format(tmp_path):
-    with pytest.raises(WaterEntropyError, match="no hydration sites"):
+    with pytest.raises(HydraRankError, match="no hydration sites"):
         write_csv([], tmp_path / "empty.csv")
-    with pytest.raises(WaterEntropyError, match="must end"):
+    with pytest.raises(HydraRankError, match="must end"):
         write_site_coordinates(ROWS, tmp_path / "sites.xyz")

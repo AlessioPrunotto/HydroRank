@@ -4,9 +4,9 @@ from dataclasses import replace
 import numpy as np
 import pytest
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.data import WaterObservations
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.config import PreprocessConfig
+from hydrarank.data import WaterObservations
+from hydrarank.exceptions import HydraRankError
 
 
 def _observations(n_obs=6, n_frames=3):
@@ -82,7 +82,7 @@ def test_dt_is_derived_from_times():
 
 
 def test_shape_mismatch_is_rejected():
-    with pytest.raises(WaterEntropyError, match="hydrogen has shape"):
+    with pytest.raises(HydraRankError, match="hydrogen has shape"):
         WaterObservations(
             oxygen=np.zeros((3, 3)),
             hydrogen=np.zeros((2, 2, 3)),
@@ -96,7 +96,7 @@ def test_shape_mismatch_is_rejected():
 
 
 def test_frame_arrays_must_agree():
-    with pytest.raises(WaterEntropyError, match="same length"):
+    with pytest.raises(HydraRankError, match="same length"):
         WaterObservations(
             oxygen=np.zeros((1, 3)),
             hydrogen=np.zeros((1, 2, 3)),
@@ -111,9 +111,9 @@ def test_frame_arrays_must_agree():
 
 def test_oxygen_and_ligand_reference_must_be_three_dimensional():
     observations = _observations()
-    with pytest.raises(WaterEntropyError, match="oxygen has shape"):
+    with pytest.raises(HydraRankError, match="oxygen has shape"):
         replace(observations, oxygen=np.zeros((observations.n_observations, 2)))
-    with pytest.raises(WaterEntropyError, match="ligand_reference"):
+    with pytest.raises(HydraRankError, match="ligand_reference"):
         replace(observations, ligand_reference=np.zeros((4, 2)))
 
 
@@ -121,13 +121,13 @@ def test_observation_frames_must_be_in_range():
     observations = _observations()
     frames = observations.frame.copy()
     frames[-1] = observations.n_frames
-    with pytest.raises(WaterEntropyError, match="outside"):
+    with pytest.raises(HydraRankError, match="outside"):
         replace(observations, frame=frames)
 
 
 @pytest.mark.parametrize("times", [np.array([0.0, 5.0, 4.0]), np.array([0.0, 5.0, 11.0])])
 def test_trajectory_times_must_be_increasing_and_regular(times):
-    with pytest.raises(WaterEntropyError, match="trajectory times"):
+    with pytest.raises(HydraRankError, match="trajectory times"):
         replace(_observations(), times=times)
 
 
@@ -135,19 +135,19 @@ def test_non_finite_coordinates_are_rejected():
     observations = _observations()
     oxygen = observations.oxygen.copy()
     oxygen[0, 0] = np.nan
-    with pytest.raises(WaterEntropyError, match="non-finite"):
+    with pytest.raises(HydraRankError, match="non-finite"):
         replace(observations, oxygen=oxygen)
 
 
 def test_frames_and_water_ids_must_be_integers():
-    with pytest.raises(WaterEntropyError, match="frame must contain integers"):
+    with pytest.raises(HydraRankError, match="frame must contain integers"):
         replace(_observations(), frame=np.zeros(6, dtype=float))
-    with pytest.raises(WaterEntropyError, match="water_id must contain integers"):
+    with pytest.raises(HydraRankError, match="water_id must contain integers"):
         replace(_observations(), water_id=np.zeros(6, dtype=float))
 
 
 def test_counts_cannot_be_negative():
-    with pytest.raises(WaterEntropyError, match="cannot be negative"):
+    with pytest.raises(HydraRankError, match="cannot be negative"):
         replace(_observations(), hb_solute=-np.ones(6))
 
 

@@ -1,12 +1,12 @@
 import numpy as np
 import pytest
 
-from water_entropy.exceptions import (
+from hydrarank.exceptions import (
     AmbiguousSelectionError,
     EmptySelectionError,
     WaterModelError,
 )
-from water_entropy.selections import (
+from hydrarank.selections import (
     analyse_water_topology,
     classify_atoms,
     select_ligand,

@@ -1,10 +1,10 @@
 import numpy as np
 import pytest
 
-from water_entropy.config import PreprocessConfig
-from water_entropy.data import WaterObservations
-from water_entropy.exceptions import WaterEntropyError
-from water_entropy.preprocess import prepare_system, run_preprocess
+from hydrarank.config import PreprocessConfig
+from hydrarank.data import WaterObservations
+from hydrarank.exceptions import HydraRankError
+from hydrarank.preprocess import prepare_system, run_preprocess
 
 
 @pytest.fixture
@@ -124,5 +124,5 @@ def test_every_spatial_cutoff_is_validated_against_the_box(pocket_system, tmp_pa
     }
     values.update(kwargs)
     config = PreprocessConfig(**values)
-    with pytest.raises(WaterEntropyError, match="minimum-image"):
+    with pytest.raises(HydraRankError, match="minimum-image"):
         prepare_system(pocket_system, config)

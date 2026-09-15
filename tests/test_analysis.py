@@ -2,10 +2,10 @@ import numpy as np
 import pytest
 from scipy.spatial.transform import Rotation
 
-from water_entropy.analysis import analyse_sites, format_analysis, residence_stats
-from water_entropy.clustering import HydrationSites
-from water_entropy.data import WaterObservations
-from water_entropy.exceptions import WaterEntropyError
+from hydrarank.analysis import analyse_sites, format_analysis, residence_stats
+from hydrarank.clustering import HydrationSites
+from hydrarank.data import WaterObservations
+from hydrarank.exceptions import HydraRankError
 
 LOCAL_HYDROGENS = np.array([[0.586, 0.757, 0.0], [0.586, -0.757, 0.0]])
 
@@ -134,10 +134,10 @@ def test_coarse_sampling_is_flagged_in_the_table():
 def test_analysis_requires_matching_observations_and_sites():
     observations, sites = _two_site_system()
     sites.labels = sites.labels[:-1]
-    with pytest.raises(WaterEntropyError, match="one entry per"):
+    with pytest.raises(HydraRankError, match="one entry per"):
         analyse_sites(observations, sites)
 
     observations, sites = _two_site_system()
     sites.n_frames += 1
-    with pytest.raises(WaterEntropyError, match="frame count"):
+    with pytest.raises(HydraRankError, match="frame count"):
         analyse_sites(observations, sites)
