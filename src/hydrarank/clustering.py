@@ -1,11 +1,11 @@
 """Clustering of water oxygen positions into hydration sites.
 
 Uses the density-peak scheme that WaterMap/SSTMap popularised: repeatedly take the
-position with the most neighbours inside a small sphere, call it a site, remove the
+region with the most neighbours inside a small sphere, call it a site, remove the
 waters it claims, and continue until no remaining peak is denser than bulk water.
-It needs nothing beyond a KD-tree, is deterministic, and produces sites of a fixed,
-physically meaningful radius -- unlike k-means (which needs the number of sites up
-front) or DBSCAN (whose clusters can grow into elongated, unphysical blobs).
+Candidate peaks are compact spatial-bin centroids; their populations and memberships
+are evaluated against the original observations.  This keeps memory linear for long,
+highly occupied trajectories while retaining fixed, physically meaningful site radii.
 """
 
 from __future__ import annotations
@@ -23,6 +23,11 @@ from hydrarank.exceptions import HydraRankError
 #: Radius of a hydration site: roughly half the O-O distance of two hydrogen-bonded
 #: waters, so that two sites cannot describe the same water.
 DEFAULT_SITE_RADIUS = 1.0
+
+# A quarter-radius grid resolves a 1 A hydration site much more finely than the
+# positional fluctuations being measured, while reducing hundreds of thousands of
+# observations to a few thousand density-peak candidates.
+_CANDIDATE_GRID_FRACTION = 0.25
 
 
 @dataclass
@@ -154,28 +159,45 @@ def cluster_positions(
     if n_points == 0:
         return np.empty((0, 3)), labels
 
-    neighbours = cKDTree(positions).query_ball_point(positions, r=radius)
-    counts = np.fromiter((len(item) for item in neighbours), dtype=np.int64, count=n_points)
     available = np.ones(n_points, dtype=bool)
+    candidates = _candidate_centers(positions, radius * _CANDIDATE_GRID_FRACTION)
 
     centers = []
     while True:
         if max_sites is not None and len(centers) >= max_sites:
             break
-        peak = int(np.argmax(np.where(available, counts, -1)))
-        if counts[peak] < min_count or not available[peak]:
+        active_indices = np.flatnonzero(available)
+        if active_indices.size < min_count:
             break
 
-        members = np.array([i for i in neighbours[peak] if available[i]], dtype=np.int64)
+        # Returning only lengths avoids the quadratic list-of-lists produced by
+        # query_ball_point(points, ...), especially when a site is occupied in
+        # nearly every frame.  Rebuilding for each accepted site also gives exact
+        # densities among the observations that remain available.
+        tree = cKDTree(positions[active_indices])
+        counts = tree.query_ball_point(candidates, r=radius, return_length=True, workers=-1)
+        peak = int(np.argmax(counts))
+        if counts[peak] < min_count:
+            break
+
+        local_members = tree.query_ball_point(candidates[peak], r=radius)
+        members = active_indices[np.asarray(local_members, dtype=np.int64)]
         labels[members] = len(centers)
         centers.append(positions[members].mean(axis=0))
-
         available[members] = False
-        for member in members:
-            for neighbour in neighbours[member]:
-                counts[neighbour] -= 1
 
     return np.asarray(centers).reshape(-1, 3), labels
+
+
+def _candidate_centers(positions: np.ndarray, cell_width: float) -> np.ndarray:
+    """Return the centroid of each occupied spatial bin."""
+    origin = positions.min(axis=0)
+    cells = np.floor((positions - origin) / cell_width).astype(np.int64)
+    _, inverse = np.unique(cells, axis=0, return_inverse=True)
+    counts = np.bincount(inverse)
+    sums = np.zeros((counts.size, 3), dtype=np.float64)
+    np.add.at(sums, inverse, positions)
+    return sums / counts[:, None]
 
 
 def cluster_hydration_sites(

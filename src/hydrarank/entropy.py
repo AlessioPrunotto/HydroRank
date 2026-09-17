@@ -83,11 +83,7 @@ def orientational_entropy(
         return float("nan")
 
     # a half turn about the body x axis (the dipole bisector) swaps the two hydrogens
-    swapped = (orientations * Rotation.from_euler("x", np.pi)).as_quat()
-
-    overlap = np.maximum(np.abs(quaternions @ quaternions.T), np.abs(quaternions @ swapped.T))
-    np.fill_diagonal(overlap, -np.inf)
-    nearest = np.arccos(np.clip(overlap.max(axis=1), -1.0, 1.0)) * 2.0
+    nearest = _nearest_orientation_angles(orientations, quaternions)
 
     valid = nearest > 0
     if np.count_nonzero(valid) < min_samples:
@@ -98,6 +94,41 @@ def orientational_entropy(
     ball_measure = np.minimum(2.0 * (theta - np.sin(theta)) / np.pi, 1.0)
     n_pairs = np.count_nonzero(valid) - 1
     return float(np.mean(np.log(n_pairs * ball_measure)) + np.euler_gamma)
+
+
+def _nearest_orientation_angles(
+    orientations: Rotation, quaternions: np.ndarray | None = None
+) -> np.ndarray:
+    """Nearest symmetry-aware rotational distance without an O(N²) matrix.
+
+    A rotation is unchanged by negating its quaternion. Water is additionally
+    unchanged by a half turn around its dipole axis, which exchanges its two
+    hydrogens. Searching a KD-tree containing both signs of the original and
+    exchanged quaternions is therefore exactly equivalent to maximizing the two
+    absolute quaternion overlaps, while requiring only linear memory.
+    """
+    if quaternions is None:
+        quaternions = np.atleast_2d(orientations.as_quat())
+    n_samples = quaternions.shape[0]
+    if n_samples < 2:
+        return np.full(n_samples, np.inf)
+
+    swapped = (orientations * Rotation.from_euler("x", np.pi)).as_quat()
+    representations = np.concatenate((quaternions, -quaternions, swapped, -swapped))
+    source = np.tile(np.arange(n_samples), 4)
+
+    # Four representations belong to the query water itself, so eight candidates
+    # are sufficient to guarantee at least one candidate from another observation.
+    k = min(8, representations.shape[0])
+    distances, indices = cKDTree(representations).query(quaternions, k=k, workers=-1)
+    distances = np.atleast_2d(distances)
+    indices = np.atleast_2d(indices)
+    belongs_to_other = source[indices] != np.arange(n_samples)[:, None]
+    first_other = np.argmax(belongs_to_other, axis=1)
+    chord = distances[np.arange(n_samples), first_other]
+
+    overlap = np.clip(1.0 - 0.5 * chord**2, -1.0, 1.0)
+    return 2.0 * np.arccos(overlap)
 
 
 def minus_t_delta_s(entropy: float, temperature: float = 300.0) -> float:

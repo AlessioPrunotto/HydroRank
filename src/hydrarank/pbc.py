@@ -3,7 +3,7 @@
 The transformations are applied lazily by MDAnalysis while iterating, so no
 intermediate trajectory is written. The order matters and is not interchangeable:
 
-1. ``unwrap`` the solute so protein and ligand are whole molecules again;
+1. make the solute whole and track its atoms across periodic images;
 2. ``center_in_box`` on the ligand, so the pocket sits at the middle of the box;
 3. ``wrap`` everything else *by residue*, which pulls the periodic images of the
    nearby waters next to the pocket while keeping each water molecule intact.
@@ -18,7 +18,10 @@ from dataclasses import dataclass
 
 import numpy as np
 from MDAnalysis import AtomGroup, Universe
-from MDAnalysis.transformations import center_in_box, unwrap, wrap
+from MDAnalysis.lib._cutil import make_whole
+from MDAnalysis.lib.distances import apply_PBC, minimize_vectors
+from MDAnalysis.transformations import center_in_box
+from MDAnalysis.transformations.base import TransformationBase
 
 from hydrarank.exceptions import HydraRankError, TrajectoryError
 
@@ -40,6 +43,72 @@ class PBCGroups:
     """Group placed at the centre of the box, normally the ligand."""
 
 
+class _FastUnwrap(TransformationBase):
+    """Make molecules whole without repeating a bond-graph walk every frame.
+
+    MDAnalysis' general-purpose ``unwrap`` transformation calls ``make_whole``
+    for every molecular fragment on every frame.  For a protein this graph walk
+    dominates the runtime.  Molecular-dynamics coordinates are continuous
+    between saved frames, so after making the first frame whole we can recover
+    subsequent images with one vectorised minimum-image operation.
+    """
+
+    parallelizable = False
+
+    def __init__(self, atoms: AtomGroup):
+        super().__init__(parallelizable=False)
+        self.atoms = atoms
+        self._indices = atoms.indices
+        self._fragments = tuple(atoms.fragments)
+        self._previous: np.ndarray | None = None
+        self._previous_frame: int | None = None
+
+    def _transform(self, ts):
+        # A backwards seek starts a new trajectory pass.  Rebuild that frame
+        # from bonds; forward iteration (including a configured stride) uses
+        # the much cheaper no-jump update.
+        if self._previous is None or (
+            self._previous_frame is not None and ts.frame <= self._previous_frame
+        ):
+            for fragment in self._fragments:
+                make_whole(fragment)
+            current = ts.positions[self._indices].copy()
+        else:
+            raw = ts.positions[self._indices]
+            current = self._previous + minimize_vectors(raw - self._previous, ts.dimensions)
+            ts.positions[self._indices] = current
+
+        self._previous = current
+        self._previous_frame = ts.frame
+        return ts
+
+
+class _FastResidueWrap(TransformationBase):
+    """Vectorised equivalent of ``AtomGroup.wrap(compound='residues')``."""
+
+    def __init__(self, atoms: AtomGroup):
+        super().__init__()
+        self._indices = atoms.indices
+        _, self._residue_inverse = np.unique(atoms.resindices, return_inverse=True)
+        self._masses = atoms.masses.astype(np.float64, copy=False)
+        self._total_masses = np.bincount(self._residue_inverse, weights=self._masses)
+        if np.any(np.isclose(self._total_masses, 0.0)):
+            raise HydraRankError("cannot wrap a residue whose total mass is zero")
+
+    def _transform(self, ts):
+        if self._indices.size == 0:
+            return ts
+        positions = ts.positions[self._indices]
+        weighted = positions * self._masses[:, None]
+        centers = np.column_stack(
+            [np.bincount(self._residue_inverse, weights=weighted[:, axis]) for axis in range(3)]
+        )
+        centers /= self._total_masses[:, None]
+        shifts = apply_PBC(centers.astype(np.float32), ts.dimensions) - centers
+        ts.positions[self._indices] = positions + shifts[self._residue_inverse]
+        return ts
+
+
 def build_pbc_groups(universe: Universe, ligand: AtomGroup) -> PBCGroups:
     solute = universe.select_atoms("protein or nucleic") | ligand
     mobile = universe.atoms - solute
@@ -59,9 +128,9 @@ def apply_pbc_transformations(
     _require_bonds(universe, groups.solute, guess_bonds)
 
     universe.trajectory.add_transformations(
-        unwrap(groups.solute),
+        _FastUnwrap(groups.solute),
         center_in_box(groups.center, center="geometry"),
-        wrap(groups.mobile, compound="residues"),
+        _FastResidueWrap(groups.mobile),
     )
     return universe
 

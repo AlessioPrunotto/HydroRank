@@ -5,6 +5,7 @@ from scipy.spatial.transform import Rotation
 from hydrarank.entropy import (
     BULK_WATER_DENSITY,
     GAS_CONSTANT,
+    _nearest_orientation_angles,
     minus_t_delta_s,
     orientational_entropy,
     translational_entropy,
@@ -80,6 +81,17 @@ def test_orientational_entropy_ignores_hydrogen_labelling():
 
     assert swapped == pytest.approx(reference, abs=1e-9)
     assert mixed == pytest.approx(reference, abs=1e-9)
+
+
+def test_orientation_tree_matches_pairwise_symmetry_search():
+    orientations = Rotation.random(80, rng=8)
+    quaternions = orientations.as_quat()
+    swapped = (orientations * Rotation.from_euler("x", np.pi)).as_quat()
+    overlap = np.maximum(np.abs(quaternions @ quaternions.T), np.abs(quaternions @ swapped.T))
+    np.fill_diagonal(overlap, -np.inf)
+    expected = 2.0 * np.arccos(np.clip(overlap.max(axis=1), -1.0, 1.0))
+
+    assert _nearest_orientation_angles(orientations) == pytest.approx(expected, abs=1e-12)
 
 
 def test_orientational_entropy_needs_enough_samples():

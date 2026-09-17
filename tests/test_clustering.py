@@ -73,6 +73,17 @@ def test_max_sites_is_respected():
     assert found.shape[0] == 2
 
 
+def test_highly_occupied_site_uses_linear_memory():
+    # Materialising every neighbour list here would contain 400 million
+    # indices.  The scalable implementation only creates the one accepted
+    # membership array.
+    positions = np.zeros((20_000, 3))
+    found, labels = cluster_positions(positions, radius=1.0, min_count=10_000)
+
+    assert found.shape == (1, 3)
+    assert np.all(labels == 0)
+
+
 def test_empty_input():
     found, labels = cluster_positions(np.empty((0, 3)))
     assert found.shape == (0, 3)

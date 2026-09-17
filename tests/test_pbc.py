@@ -1,8 +1,10 @@
 import numpy as np
 import pytest
+from MDAnalysis.transformations import wrap
 
 from hydrarank.exceptions import HydraRankError, TrajectoryError
 from hydrarank.pbc import (
+    _FastResidueWrap,
     apply_pbc_transformations,
     assert_solute_whole,
     build_pbc_groups,
@@ -69,6 +71,23 @@ def test_water_is_wrapped_next_to_the_ligand_without_being_split(straddling_syst
     spread = np.linalg.norm(water.positions - oxygen, axis=1)
     assert spread.max() < 2.0  # molecule intact
     assert np.linalg.norm(oxygen - ligand.center_of_geometry()) < 5.0
+
+
+def test_vectorised_residue_wrap_matches_mdanalysis(build_universe):
+    positions = np.array(
+        LIGAND_XYZ
+        + WATER_XYZ
+        + [[52.0, -2.0, 25.0], [52.9, -2.0, 25.0], [51.7, -1.1, 25.0], [52.1, -1.9, 25.0]]
+    )
+    expected = build_universe([LIGAND, WATER, WATER], positions=positions)
+    actual = build_universe([LIGAND, WATER, WATER], positions=positions)
+    expected_mobile = expected.select_atoms("resname OPC")
+    actual_mobile = actual.select_atoms("resname OPC")
+
+    wrap(expected_mobile, compound="residues")(expected.trajectory.ts)
+    _FastResidueWrap(actual_mobile)(actual.trajectory.ts)
+
+    assert actual_mobile.positions == pytest.approx(expected_mobile.positions, abs=1e-6)
 
 
 def test_transformations_applied_only_once(straddling_system):
