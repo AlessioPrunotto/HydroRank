@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use HydraRank, please cite this software and the scientific methods it implements."
+title: "HydraRank"
+type: software
+authors:
+  - family-names: Prunotto
+    given-names: Alessio
+version: 0.1.0
+date-released: 2026-09-15
+license: MIT
+abstract: "Lightweight hydration-site analysis and heuristic water-displacement ranking for ligand design."
+keywords:
+  - molecular dynamics
+  - hydration sites
+  - water entropy
+  - ligand design
