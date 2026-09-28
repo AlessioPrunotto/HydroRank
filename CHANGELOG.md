@@ -31,7 +31,8 @@ Changelog, and releases use semantic versioning.
 - Renamed the distribution, Python package, command, exception hierarchy, and generated
   format labels from `water-entropy` / `water_entropy` to HydraRank / `hydrarank`.
 - Command-line arguments now override YAML configuration values.
-- The bundled kinase analysis is documented as a software demonstration only.
+- Replaced the obsolete demonstration dataset with a compact 200 ps 3RLP HSP90 fixture;
+  full-length HSP90 trajectories remain the basis for scientific validation.
 - Data contracts, cutoff checks, time sampling, and configuration validation are stricter.
 
 ### Fixed
