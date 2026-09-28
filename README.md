@@ -91,16 +91,16 @@ explicit coordinates because its embedded coordinates are not a reliable spatial
 
 ## Demonstration and individual stages
 
-> **Demonstration data only.** The bundled kinase trajectory contains 301 frames spaced
-> 100 ps apart. This is useful for exercising the complete software workflow, but it is
-> too short and too coarsely sampled for reliable residence times, entropy estimates, or
+> **Demonstration data only.** The bundled 3RLP HSP90 trajectory slice contains 101
+> contiguous frames spaced 2 ps apart (200 ps total). It exercises the complete software
+> workflow, but is far too short for reliable residence times, entropy estimates, or
 > displacement rankings. The numerical results below demonstrate the output format and
 > must not be interpreted as scientific conclusions about this ligand or binding site.
 
 The bundled system can run through the new workflow directly:
 
 ```bash
-uv run hydrarank analyse -c examples/kinase.yaml --output-dir output/demo
+uv run hydrarank analyse -c examples/hsp90_demo.yaml --output-dir output/demo
 ```
 
 The lower-level commands remain available for debugging and custom pipelines. Inspect a
@@ -108,57 +108,56 @@ system and check that the selections do what you expect:
 
 ```bash
 uv run hydrarank info \
-    -s sample_traj/gromacs_traj/step3_input.psf \
-    -f sample_traj/gromacs_traj/step5.xtc \
-    -l "resname 547"
+    -s examples/data/hsp90_3rlp_demo/step5.tpr \
+    -f examples/data/hsp90_3rlp_demo/step5_0_200ps.xtc \
+    -l "resname 3RP"
 ```
 
 ```
 System
-  atoms              : 77907
-  frames             : 301 (dt = 100 ps)
-  box                : 86.00 x 86.00 x 86.00 A, angles 90.0/90.0/90.0 (orthorhombic)
+  atoms              : 62822
+  frames             : 101 (dt = 2 ps)
+  box                : 80.00 x 80.00 x 80.00 A, angles 90.0/90.0/90.0 (orthorhombic)
   bonds in topology  : yes
 Water
-  molecules          : 18337 (resname OPC)
+  molecules          : 14799 (resname OPC)
   model              : 4-site (TIP4P/OPC-like)
 Ligand
-  selection          : resname 547
-  atoms              : 56 (30 heavy)
+  selection          : resname 3RP
+  atoms              : 29 (18 heavy)
 Warnings
-  - effective frame spacing is 100 ps, which is longer than typical water residence
-    times (1-100 ps); persistence and entropy estimates will be unreliable
+  - only 101 frames selected; per-site statistics will be noisy (a few thousand frames is a reasonable target)
 ```
 
 Then check that the periodic-boundary treatment and the binding-site fit are sound:
 
 ```bash
-uv run hydrarank check -c examples/kinase.yaml
+uv run hydrarank check -c examples/hsp90_demo.yaml
 ```
 
 ```
 Preprocessing QC
-  frames analysed    : 301
-  fit atoms          : 55 (reference frame 0)
-  fit RMSD           : mean 1.04 A, max 1.35 A, last 1.35 A
+  frames analysed    : 101
+  fit atoms          : 61 (reference frame 0)
+  fit RMSD           : mean 0.53 A, max 0.66 A, last 0.52 A
   longest bond       : 1.93 A (solute whole)
-  waters within 5 A: mean 32.1 (min 18, max 40)
+  waters within 5 A: mean 18.4 (min 14, max 21)
 ```
 
 Then cluster the first-shell waters into hydration sites:
 
 ```bash
-uv run hydrarank sites -c examples/kinase.yaml
+uv run hydrarank sites -c examples/hsp90_demo.yaml
 ```
 
 ```
-Hydration sites (radius 1 A, 301 frames at 100 ps, T = 300 K)
-  21 sites, 3124 of 7585 water observations assigned
+Hydration sites (radius 1 A, 101 frames at 2 ps, T = 303.15 K)
+  21 sites, 1342 of 1860 water observations assigned
 
  site       x       y       z   wat  occup  res/ps  encl    hb    S_tr    S_or    -TdS
-    1   46.64   39.64   45.43   248   0.82     420  21.9  1.87   -2.63   -2.67    3.16
-    2   41.15   46.12   38.44   231   0.77     608  14.4  0.03   -2.81   -3.33    3.66
-    3   43.39   46.12   40.21   215   0.71    7167  19.6  1.13   -3.10   -4.53    4.55
+    1   38.05   43.32   38.51   101   1.00     202  27.0  1.82   -3.52   -4.43    4.79
+    2   39.23   45.81   39.32   101   1.00     202  21.6  2.02   -3.53   -4.19    4.65
+    3   45.11   43.29   42.02   101   1.00     202  31.7  4.00   -4.40   -5.35    5.87
   ...
 
 S_tr, S_or: excess translational / orientational entropy per water relative to
@@ -170,15 +169,15 @@ encl: mean nearby solute heavy atoms; hb: mean solute hydrogen bonds per water.
 Rank the sites by entropy released minus a configurable hydrogen-bond penalty:
 
 ```bash
-uv run hydrarank rank -c examples/kinase.yaml \
+uv run hydrarank rank -c examples/hsp90_demo.yaml \
     --observations output/observations.npz --top 5
 ```
 
 ```
 rank site  occup  encl    hb   -TdS  score  category
-   1    2   0.77  14.4  0.03   3.66   3.63  displaceable
-   2    3   0.71  19.6  1.13   4.55   3.41  replace-hbonds
-   3    9   0.50  17.1  0.68   3.34   2.66  displaceable
+   1   19   0.36  19.3  1.00   4.32   3.32  replace-hbonds
+   2    6   0.91  24.3  0.99   4.09   3.10  displaceable
+   3    1   1.00  27.0  1.82   4.79   2.97  replace-hbonds
 ```
 
 `displaceable` sites are ordered and weakly hydrogen bonded to the solute.
@@ -197,9 +196,9 @@ minimum trajectory length.
 Extracting the water observations is the expensive part, so it can be cached:
 
 ```bash
-uv run hydrarank preprocess -c examples/kinase.yaml -o output/observations.npz
-uv run hydrarank sites -c examples/kinase.yaml --observations output/observations.npz
-uv run hydrarank rank -c examples/kinase.yaml --observations output/observations.npz
+uv run hydrarank preprocess -c examples/hsp90_demo.yaml -o output/observations.npz
+uv run hydrarank sites -c examples/hsp90_demo.yaml --observations output/observations.npz
+uv run hydrarank rank -c examples/hsp90_demo.yaml --observations output/observations.npz
 ```
 
 Preprocessing reports progress on stderr. Pass `--no-progress` for quiet batch jobs.
@@ -210,7 +209,7 @@ Both `sites` and `rank` can write CSV tables, molecular-viewer coordinates, and 
 plots alongside their terminal or JSON output:
 
 ```bash
-uv run hydrarank rank -c examples/kinase.yaml \
+uv run hydrarank rank -c examples/hsp90_demo.yaml \
     --observations output/observations.npz \
     --csv output/ranking.csv \
     --site-coordinates output/sites.pdb \
@@ -233,9 +232,9 @@ from hydrarank.preprocess import run_preprocess
 from hydrarank.ranking import format_ranking, rank_sites
 
 config = PreprocessConfig(
-    topology="step3_input.psf",
-    trajectory=["step5.xtc"],
-    ligand_selection="resname 547",
+    topology="examples/data/hsp90_3rlp_demo/step5.tpr",
+    trajectory=["examples/data/hsp90_3rlp_demo/step5_0_200ps.xtc"],
+    ligand_selection="resname 3RP",
 )
 universe = load_universe(config)
 report, water_topology = describe_system(universe, config)
@@ -248,7 +247,7 @@ print(format_analysis(analysis))
 print(format_ranking(rank_sites(analysis)))
 ```
 
-Configuration can also live in YAML — see [examples/kinase.yaml](examples/kinase.yaml).
+Configuration can also live in YAML — see [examples/hsp90_demo.yaml](examples/hsp90_demo.yaml).
 
 ## Package layout
 
