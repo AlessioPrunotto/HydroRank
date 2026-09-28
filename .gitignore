@@ -11,4 +11,5 @@ dist/
 .DS_Store
 output/
 sample_traj/
+sstmap_analysis/
 README_pers.md
