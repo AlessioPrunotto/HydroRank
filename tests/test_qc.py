@@ -11,7 +11,7 @@ N_RESIDUES = 4
 def config(tmp_path):
     return PreprocessConfig(
         topology=tmp_path / "top.psf",
-        ligand_selection="resname 547",
+        ligand_selection="resname LIG",
         water_cutoff=5.0,
         pocket_cutoff=10.0,
     )
@@ -32,7 +32,7 @@ def test_qc_on_a_rigid_system(pocket_system, config):
 def test_qc_honours_the_frame_range(pocket_system, tmp_path):
     config = PreprocessConfig(
         topology=tmp_path / "top.psf",
-        ligand_selection="resname 547",
+        ligand_selection="resname LIG",
         pocket_cutoff=10.0,
         start=1,
         step=2,

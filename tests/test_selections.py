@@ -55,19 +55,19 @@ def test_mixed_water_sizes_rejected(build_universe):
 
 def test_ligand_autodetected_ignoring_water_and_ions(opc_system):
     ligand = select_ligand(opc_system)
-    assert set(ligand.residues.resnames) == {"547"}
+    assert set(ligand.residues.resnames) == {"LIG"}
     assert ligand.n_atoms == 11
 
 
 def test_ligand_autodetection_refuses_when_ambiguous(build_universe):
-    ligand = ("547", [(f"C{i}", 12.011) for i in range(10)])
+    ligand = ("LIG", [(f"C{i}", 12.011) for i in range(10)])
     universe = build_universe([ligand, ("ABC", [(f"C{i}", 12.011) for i in range(10)])])
     with pytest.raises(AmbiguousSelectionError, match="2 candidates"):
         select_ligand(universe)
 
 
 def test_explicit_ligand_selection_wins(opc_system):
-    assert select_ligand(opc_system, "resname 547").n_atoms == 11
+    assert select_ligand(opc_system, "resname LIG").n_atoms == 11
 
 
 def test_empty_explicit_ligand_selection_raises(opc_system):

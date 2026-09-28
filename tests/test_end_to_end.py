@@ -8,7 +8,7 @@ from hydrarank.ranking import rank_sites
 def test_compact_in_memory_pipeline_runs_end_to_end(pocket_system, tmp_path):
     config = PreprocessConfig(
         topology=tmp_path / "top.psf",
-        ligand_selection="resname 547",
+        ligand_selection="resname LIG",
         pocket_cutoff=10.0,
     )
 

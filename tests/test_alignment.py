@@ -12,7 +12,7 @@ from hydrarank.alignment import (
 from hydrarank.exceptions import EmptySelectionError
 
 ALA = [("N", 14.007), ("CA", 12.011), ("C", 12.011), ("O", 15.999), ("CB", 12.011)]
-LIGAND = ("547", [(f"C{i}", 12.011) for i in range(4)])
+LIGAND = ("LIG", [(f"C{i}", 12.011) for i in range(4)])
 
 
 def _protein_ligand(build_universe, n_frames=3):
@@ -25,7 +25,7 @@ def _protein_ligand(build_universe, n_frames=3):
 
 def test_alignment_group_is_the_pocket_backbone(build_universe):
     universe = _protein_ligand(build_universe)
-    ligand = universe.select_atoms("resname 547")
+    ligand = universe.select_atoms("resname LIG")
     group = select_alignment_group(universe, ligand, cutoff=20.0)
     assert group.n_atoms == 4
     assert set(group.names) == {"CA"}
@@ -33,7 +33,7 @@ def test_alignment_group_is_the_pocket_backbone(build_universe):
 
 def test_alignment_group_too_small_raises(build_universe):
     universe = _protein_ligand(build_universe)
-    ligand = universe.select_atoms("resname 547")
+    ligand = universe.select_atoms("resname LIG")
     with pytest.raises(EmptySelectionError, match="at least 3"):
         select_alignment_group(universe, ligand, cutoff=8.0)
 
@@ -84,7 +84,7 @@ def test_aligner_rejects_mismatched_group_size():
 
 def test_build_reference_restores_the_current_frame(build_universe):
     universe = _protein_ligand(build_universe)
-    ligand = universe.select_atoms("resname 547")
+    ligand = universe.select_atoms("resname LIG")
     group = select_alignment_group(universe, ligand, cutoff=20.0)
     universe.trajectory[2]
 
@@ -97,7 +97,7 @@ def test_build_reference_restores_the_current_frame(build_universe):
 
 def test_rmsd_series_is_zero_for_a_rigid_system(build_universe):
     universe = _protein_ligand(build_universe)
-    ligand = universe.select_atoms("resname 547")
+    ligand = universe.select_atoms("resname LIG")
     group = select_alignment_group(universe, ligand, cutoff=20.0)
     aligner = SiteAligner(build_reference(group))
 

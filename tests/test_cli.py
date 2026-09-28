@@ -142,6 +142,29 @@ def test_command_line_options_override_config_file(tmp_path):
     assert config.trajectory == [tmp_path / "traj.xtc"]
 
 
+def test_apo_reference_options_are_loaded_from_command_line():
+    args = cli.build_parser().parse_args(
+        [
+            "analyse",
+            "-s",
+            "apo.tpr",
+            "-f",
+            "apo.xtc",
+            "--reference-structure",
+            "bound.tpr",
+            "--reference-coordinates",
+            "bound.xtc",
+            "--reference-ligand-selection",
+            "resname LIG",
+        ]
+    )
+    config = cli._config_from_args(args)
+    assert str(config.reference_structure) == "bound.tpr"
+    assert str(config.reference_coordinates) == "bound.xtc"
+    assert config.reference_ligand_selection == "resname LIG"
+    assert config.ligand_selection is None
+
+
 def test_top_must_be_positive():
     parser = cli.build_parser()
     try:

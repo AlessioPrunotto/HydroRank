@@ -52,7 +52,7 @@ def _build(
 
 OPC_WATER = ("OPC", [("OW", 15.999), ("HW1", 1.008), ("HW2", 1.008), ("MW", 0.0)])
 TIP3_WATER = ("TIP3", [("OH2", 15.999), ("H1", 1.008), ("H2", 1.008)])
-LIGAND = ("547", [(f"C{i}", 12.011) for i in range(10)] + [("H1", 1.008)])
+LIGAND = ("LIG", [(f"C{i}", 12.011) for i in range(10)] + [("H1", 1.008)])
 SODIUM = ("SOD", [("SOD", 22.99)])
 
 
@@ -73,7 +73,7 @@ def build_universe():
 
 ALA = [("N", 14.007), ("CA", 12.011), ("C", 12.011), ("O", 15.999), ("CB", 12.011)]
 POCKET_LIGAND = (
-    "547",
+    "LIG",
     [("C0", 12.011), ("N1", 14.007), ("S1", 32.06), ("O1", 15.999)],
 )
 N_POCKET_RESIDUES = 4
@@ -118,3 +118,15 @@ def pocket_system() -> Universe:
         OPC_WATER,
     ]
     return _build(residues, n_frames=4, positions=_pocket_positions(), bonds=_pocket_bonds())
+
+
+@pytest.fixture
+def apo_pocket_system() -> Universe:
+    """The pocket fixture with its ligand removed but the same protein numbering."""
+    residues = [("ALA", ALA) for _ in range(N_POCKET_RESIDUES)] + [
+        OPC_WATER,
+        OPC_WATER,
+    ]
+    positions = np.concatenate([_pocket_positions()[:20], _pocket_positions()[24:]], axis=0)
+    bonds = [bond for bond in _pocket_bonds() if max(bond) < 20]
+    return _build(residues, n_frames=4, positions=positions, bonds=bonds)

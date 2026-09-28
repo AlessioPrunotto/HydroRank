@@ -7,7 +7,7 @@ from hydrarank.io import describe_system, frame_slice
 
 @pytest.fixture
 def config(tmp_path):
-    return PreprocessConfig(topology=tmp_path / "top.psf", ligand_selection="resname 547")
+    return PreprocessConfig(topology=tmp_path / "top.psf", ligand_selection="resname LIG")
 
 
 def test_describe_system(opc_system, config):

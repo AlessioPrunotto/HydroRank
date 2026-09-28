@@ -13,7 +13,7 @@ from hydrarank.pbc import (
 )
 
 BOX = (50.0, 50.0, 50.0, 90.0, 90.0, 90.0)
-LIGAND = ("547", [(f"C{i}", 12.011) for i in range(4)])
+LIGAND = ("LIG", [(f"C{i}", 12.011) for i in range(4)])
 WATER = ("OPC", [("OW", 15.999), ("HW1", 1.008), ("HW2", 1.008), ("MW", 0.0)])
 
 # ligand straddling the x boundary, water sitting next to its periodic image
@@ -44,14 +44,14 @@ def straddling_system(build_universe):
 
 
 def test_solute_is_split_before_transformation(straddling_system):
-    ligand = straddling_system.select_atoms("resname 547")
+    ligand = straddling_system.select_atoms("resname LIG")
     assert max_bond_length(ligand) > 3.0
     with pytest.raises(HydraRankError, match="not whole"):
         assert_solute_whole(ligand)
 
 
 def test_transformations_make_solute_whole_and_centre_it(straddling_system):
-    ligand = straddling_system.select_atoms("resname 547")
+    ligand = straddling_system.select_atoms("resname LIG")
     groups = build_pbc_groups(straddling_system, ligand)
     assert groups.mobile.n_atoms == 4  # the water only
     apply_pbc_transformations(straddling_system, groups)
@@ -62,7 +62,7 @@ def test_transformations_make_solute_whole_and_centre_it(straddling_system):
 
 
 def test_water_is_wrapped_next_to_the_ligand_without_being_split(straddling_system):
-    ligand = straddling_system.select_atoms("resname 547")
+    ligand = straddling_system.select_atoms("resname LIG")
     water = straddling_system.select_atoms("resname OPC")
     apply_pbc_transformations(straddling_system, build_pbc_groups(straddling_system, ligand))
 
@@ -91,7 +91,7 @@ def test_vectorised_residue_wrap_matches_mdanalysis(build_universe):
 
 
 def test_transformations_applied_only_once(straddling_system):
-    ligand = straddling_system.select_atoms("resname 547")
+    ligand = straddling_system.select_atoms("resname LIG")
     groups = build_pbc_groups(straddling_system, ligand)
     apply_pbc_transformations(straddling_system, groups)
     with pytest.raises(HydraRankError, match="already been applied"):
@@ -100,7 +100,7 @@ def test_transformations_applied_only_once(straddling_system):
 
 def test_missing_bonds_raise_with_actionable_message(build_universe):
     universe = build_universe([LIGAND, WATER], box=BOX)
-    ligand = universe.select_atoms("resname 547")
+    ligand = universe.select_atoms("resname LIG")
     with pytest.raises(TrajectoryError, match="no bonds"):
         apply_pbc_transformations(universe, build_pbc_groups(universe, ligand))
 
@@ -108,7 +108,7 @@ def test_missing_bonds_raise_with_actionable_message(build_universe):
 def test_guessed_bonds_allow_unwrapping(build_universe):
     universe = build_universe([LIGAND, WATER], box=BOX, positions=np.array(LIGAND_XYZ + WATER_XYZ))
     universe.add_TopologyAttr("type", ["C"] * 4 + ["O", "H", "H", "M"])
-    ligand = universe.select_atoms("resname 547")
+    ligand = universe.select_atoms("resname LIG")
     apply_pbc_transformations(universe, build_pbc_groups(universe, ligand), guess_bonds=True)
     assert universe.trajectory.transformations
 

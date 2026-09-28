@@ -22,6 +22,10 @@ def _water_geometries(orientations, rng):
     return oxygen, oxygen[:, None, :] + hydrogen
 
 
+def test_bulk_water_density_reference():
+    assert pytest.approx(0.0333) == BULK_WATER_DENSITY
+
+
 def test_translational_entropy_is_zero_at_bulk_density():
     rng = np.random.default_rng(0)
     side = (1.0 / BULK_WATER_DENSITY) ** (1 / 3)

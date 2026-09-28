@@ -1,6 +1,7 @@
 import numpy as np
 import pytest
 
+import hydrarank.preprocess as preprocess
 from hydrarank.config import PreprocessConfig
 from hydrarank.data import WaterObservations
 from hydrarank.exceptions import HydraRankError
@@ -11,7 +12,7 @@ from hydrarank.preprocess import prepare_system, run_preprocess
 def config(tmp_path):
     return PreprocessConfig(
         topology=tmp_path / "top.psf",
-        ligand_selection="resname 547",
+        ligand_selection="resname LIG",
         water_cutoff=5.0,
         pocket_cutoff=10.0,
     )
@@ -29,6 +30,43 @@ def test_prepare_system_sets_everything_up(pocket_system, config):
     assert system.reference_frame == 0
     assert system.ligand_reference.shape == (4, 3)
     assert pocket_system.trajectory.transformations
+
+
+def test_apo_system_uses_external_ligand_only_as_spatial_reference(
+    apo_pocket_system, pocket_system, monkeypatch, tmp_path
+):
+    config = PreprocessConfig(
+        topology=tmp_path / "apo.psf",
+        reference_structure=tmp_path / "bound-reference.pdb",
+        reference_ligand_selection="resname LIG",
+        water_cutoff=5.0,
+        pocket_cutoff=10.0,
+    )
+    monkeypatch.setattr(preprocess, "load_reference_universe", lambda config: pocket_system)
+
+    system = prepare_system(apo_pocket_system, config)
+    assert system.ligand is None
+    assert system.ligand_heavy is None
+    assert system.ligand_reference.shape == (4, 3)
+    assert system.fit_group.n_atoms == 4
+    assert set(system.polar.heavy.resnames) == {"ALA"}
+
+
+def test_apo_preprocessing_records_external_reference(
+    apo_pocket_system, pocket_system, monkeypatch, tmp_path
+):
+    config = PreprocessConfig(
+        topology=tmp_path / "apo.psf",
+        reference_structure=tmp_path / "bound-reference.pdb",
+        reference_ligand_selection="resname LIG",
+        water_cutoff=5.0,
+        pocket_cutoff=10.0,
+    )
+    monkeypatch.setattr(preprocess, "load_reference_universe", lambda config: pocket_system)
+    observations = run_preprocess(apo_pocket_system, config)
+    assert observations.n_observations == 8
+    assert observations.metadata["reference_ligand_selection"] == "resname LIG"
+    assert observations.metadata["ligand_selection"] is None
 
 
 def test_observations_have_one_row_per_water_and_frame(pocket_system, config):
@@ -69,7 +107,7 @@ def test_shell_is_defined_against_the_reference_ligand_pose(pocket_system, confi
 def test_tight_cutoff_yields_no_observations(pocket_system, tmp_path):
     config = PreprocessConfig(
         topology=tmp_path / "top.psf",
-        ligand_selection="resname 547",
+        ligand_selection="resname LIG",
         water_cutoff=0.5,
         pocket_cutoff=10.0,
     )
@@ -82,7 +120,7 @@ def test_tight_cutoff_yields_no_observations(pocket_system, tmp_path):
 def test_frame_range_is_honoured(pocket_system, tmp_path):
     config = PreprocessConfig(
         topology=tmp_path / "top.psf",
-        ligand_selection="resname 547",
+        ligand_selection="resname LIG",
         pocket_cutoff=10.0,
         start=1,
         step=2,
@@ -119,7 +157,7 @@ def test_observations_survive_a_roundtrip(pocket_system, config, tmp_path):
 def test_every_spatial_cutoff_is_validated_against_the_box(pocket_system, tmp_path, kwargs):
     values = {
         "topology": tmp_path / "top.psf",
-        "ligand_selection": "resname 547",
+        "ligand_selection": "resname LIG",
         "pocket_cutoff": 10.0,
     }
     values.update(kwargs)
