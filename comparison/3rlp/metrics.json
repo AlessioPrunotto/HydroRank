@@ -1,0 +1,171 @@
+{
+  "scope": "single-system controlled method comparison; not general validation",
+  "settings": {
+    "temperature_K": 303.15,
+    "sstmap_native_entropy_temperature_K": 300.0,
+    "bulk_density_A^-3": 0.0333,
+    "frames": 25001,
+    "frame_spacing_ps": 2.0,
+    "site_radius_A": 1.0,
+    "matching_cutoff_A": 1.0
+  },
+  "site_detection": {
+    "hydrarank_sites": 19,
+    "sstmap_sites": 21,
+    "matched_pairs": 19,
+    "hydrarank_unmatched": 0,
+    "sstmap_unmatched": 2,
+    "matched_fraction_of_union": 0.9047619047619048,
+    "center_distance_A": {
+      "mean": 0.10346586344837842,
+      "median": 0.06282804812733715,
+      "max": 0.304277344137176
+    },
+    "matches_at_cutoffs_A": {
+      "0.25": 17,
+      "0.5": 19,
+      "0.75": 19,
+      "1.0": 19
+    }
+  },
+  "matched_site_metrics": {
+    "occupancy": {
+      "n": 19,
+      "pearson_r": 0.9478143178477596,
+      "spearman_rho": 0.9727386542619467,
+      "mean_hydrarank_minus_sstmap": -0.031453268185062055,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        -0.07741168774301659,
+        -0.0014758262301086888
+      ],
+      "mae": 0.03330287841117933,
+      "rmse": 0.09326109601122046
+    },
+    "minus_T_delta_S_trans_kcal_mol": {
+      "n": 19,
+      "pearson_r": 0.9557310099413772,
+      "spearman_rho": 0.9894736842105263,
+      "mean_hydrarank_minus_sstmap": -0.18104623801052944,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        -0.27836857948783156,
+        -0.08000933488976292
+      ],
+      "mae": 0.2417422177007376,
+      "rmse": 0.288286320215065
+    },
+    "minus_T_delta_S_orient_kcal_mol": {
+      "n": 19,
+      "pearson_r": 0.9780594733693218,
+      "spearman_rho": 1.0,
+      "mean_hydrarank_minus_sstmap": 0.09713650658872268,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        -0.01894773215207754,
+        0.17121753238900198
+      ],
+      "mae": 0.18691813354202794,
+      "rmse": 0.24640726640097438
+    },
+    "minus_T_delta_S_total_kcal_mol": {
+      "n": 19,
+      "pearson_r": 0.9943826041227706,
+      "spearman_rho": 0.9912280701754386,
+      "mean_hydrarank_minus_sstmap": -0.08390951868496473,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        -0.24727711560280613,
+        0.05950079156692676
+      ],
+      "mae": 0.2666365605193294,
+      "rmse": 0.35600815678126135
+    },
+    "solute_hbonds_native_definitions": {
+      "n": 19,
+      "pearson_r": 0.9432817709704997,
+      "spearman_rho": 0.9228070175438597,
+      "mean_hydrarank_minus_sstmap": 0.27911043635971694,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        0.10786100095408749,
+        0.485277687789982
+      ],
+      "mae": 0.27911043635971694,
+      "rmse": 0.5073234293694182
+    },
+    "hydrarank_score_vs_sstmap_derived_score_proxy": {
+      "n": 19,
+      "pearson_r": 0.6599873184689217,
+      "spearman_rho": 0.6824561403508772,
+      "mean_hydrarank_minus_sstmap": -0.36301995504468165,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        -0.7129707161843575,
+        -0.06435406332095038
+      ],
+      "mae": 0.5153454903779181,
+      "rmse": 0.8161188037523912
+    }
+  },
+  "ranking_comparison": {
+    "definition": "SSTMap proxy = SSTMap -TDeltaS total - 1 kcal/mol * SSTMap solute H-bonds; this is not a native SSTMap score",
+    "top_k_overlap": {
+      "top_3": {
+        "overlap": 2,
+        "possible": 3,
+        "jaccard": 0.5
+      },
+      "top_5": {
+        "overlap": 3,
+        "possible": 5,
+        "jaccard": 0.42857142857142855
+      },
+      "top_10": {
+        "overlap": 8,
+        "possible": 10,
+        "jaccard": 0.6666666666666666
+      }
+    }
+  },
+  "reference_frame_transform": {
+    "ligand_heavy_atoms": 18,
+    "ligand_fit_rmsd_A": 0.004553437263472622
+  },
+  "sstmap_alignment_sensitivity": {
+    "local_sites": 21,
+    "global_sites": 19,
+    "matched_pairs_within_1A": 17,
+    "local_sites_unmatched": 2,
+    "center_shift_A": {
+      "mean": 0.4756915424540819,
+      "median": 0.4555216789572121,
+      "max": 0.8422588675698173
+    },
+    "occupancy": {
+      "n": 17,
+      "pearson_r": 0.9856860423328049,
+      "spearman_rho": 0.9815527855444676,
+      "mean_hydrarank_minus_sstmap": 0.05823529411764706,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        0.03823529411764707,
+        0.08176470588235293
+      ],
+      "mae": 0.05823529411764706,
+      "rmse": 0.0740031795819294
+    },
+    "minus_T_delta_S_total_kcal_mol": {
+      "n": 17,
+      "pearson_r": 0.9985602998080738,
+      "spearman_rho": 0.9950980392156863,
+      "mean_hydrarank_minus_sstmap": 0.2315336062352941,
+      "mean_difference_across_site_bootstrap_95pct_ci": [
+        0.1802726784036765,
+        0.2889935756014706
+      ],
+      "mae": 0.2315336062352941,
+      "rmse": 0.25918124464849407
+    }
+  },
+  "inputs": {
+    "output/hsp90/3rlp/results.json": "6a20d239b5205e052a0e527eb2b8c78d635339b5dfd9eac66ac88b03ff824450",
+    "output/hsp90/3rlp/observations.npz": "df29f63e1cb474b3ee9ef859849246f99117ddd4b5335a052c0cf58665624c51",
+    "sstmap_analysis/3rlp/full_hydrarank61/SSTMap_HSA/3rlp_hydrarank61_hsa_summary.txt": "78c576169bd6e2d4df6855b3c8bea2b38cc995de4585d89d00ddb8494b3cb04d",
+    "sstmap_analysis/3rlp/full_opc_neighbors/SSTMap_HSA/3rlp_opc_fixed_hsa_summary.txt": "e5f159bff9ab3a345000b989cc3f7b6321077b20b1c1cb3af6eb2b31c3da3ef2",
+    "sstmap_analysis/3rlp/input/3RP_aligned.pdb": "3fe6d7f9ffea8b67dd10d2945690a38a0d7320894cfb622b59ce95eb5711e859"
+  }
+}
