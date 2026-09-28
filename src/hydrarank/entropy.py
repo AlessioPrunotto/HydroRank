@@ -18,8 +18,8 @@ import numpy as np
 from scipy.spatial import cKDTree
 from scipy.spatial.transform import Rotation
 
-#: Number density of bulk water at 300 K, in molecules per cubic angstrom.
-BULK_WATER_DENSITY = 0.0329
+#: Number density of bulk water near 300 K, in molecules per cubic angstrom.
+BULK_WATER_DENSITY = 0.0333
 
 #: Gas constant in kcal / (mol K).
 GAS_CONSTANT = 1.987204259e-3
