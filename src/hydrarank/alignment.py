@@ -20,7 +20,7 @@ import numpy as np
 from MDAnalysis import AtomGroup, Universe
 from MDAnalysis.analysis.align import rotation_matrix
 
-from hydrarank.exceptions import EmptySelectionError
+from hydrarank.exceptions import EmptySelectionError, HydraRankError
 
 
 @dataclass(frozen=True)
@@ -50,6 +50,34 @@ def select_alignment_group(universe: Universe, ligand: AtomGroup, cutoff: float 
             "the ligand is not a periodic image away from the protein."
         )
     return group
+
+
+def map_reference_group(reference_group: AtomGroup, target: Universe) -> AtomGroup:
+    """Map reference pocket atoms onto an apo topology by residue id/name and atom name.
+
+    The mapping deliberately requires unique identifiers. Silent sequence alignment or
+    nearest-coordinate matching would make an apparently successful apo analysis use the
+    wrong pocket when chains, insertions, or residue numbering differ.
+    """
+    target_protein = target.select_atoms("protein")
+    lookup: dict[tuple[int, str, str], list[int]] = {}
+    for atom in target_protein:
+        key = (int(atom.resid), str(atom.resname), str(atom.name))
+        lookup.setdefault(key, []).append(int(atom.ix))
+
+    mapped = []
+    for atom in reference_group:
+        key = (int(atom.resid), str(atom.resname), str(atom.name))
+        candidates = lookup.get(key, [])
+        if len(candidates) != 1:
+            detail = "missing" if not candidates else f"ambiguous ({len(candidates)} matches)"
+            raise HydraRankError(
+                "cannot map reference pocket atom "
+                f"{atom.resname}{atom.resid}-{atom.name} onto the trajectory topology: {detail}. "
+                "Use a reference structure with matching protein residue numbering and one chain."
+            )
+        mapped.append(candidates[0])
+    return target.atoms[np.asarray(mapped, dtype=int)]
 
 
 def build_reference(group: AtomGroup, frame: int = 0) -> AlignmentReference:

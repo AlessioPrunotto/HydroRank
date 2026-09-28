@@ -4,7 +4,8 @@ The transformations are applied lazily by MDAnalysis while iterating, so no
 intermediate trajectory is written. The order matters and is not interchangeable:
 
 1. make the solute whole and track its atoms across periodic images;
-2. ``center_in_box`` on the ligand, so the pocket sits at the middle of the box;
+2. ``center_in_box`` on the ligand or apo pocket anchor, so the pocket sits at the
+   middle of the box;
 3. ``wrap`` everything else *by residue*, which pulls the periodic images of the
    nearby waters next to the pocket while keeping each water molecule intact.
 
@@ -40,7 +41,7 @@ class PBCGroups:
     """Everything wrapped by residue (water, ions, lipids, ...)."""
 
     center: AtomGroup
-    """Group placed at the centre of the box, normally the ligand."""
+    """Group placed at the centre of the box, normally the ligand or apo pocket."""
 
 
 class _FastUnwrap(TransformationBase):
@@ -109,10 +110,11 @@ class _FastResidueWrap(TransformationBase):
         return ts
 
 
-def build_pbc_groups(universe: Universe, ligand: AtomGroup) -> PBCGroups:
-    solute = universe.select_atoms("protein or nucleic") | ligand
+def build_pbc_groups(universe: Universe, center: AtomGroup) -> PBCGroups:
+    """Build groups around a ligand or a protein pocket used as the centering anchor."""
+    solute = universe.select_atoms("protein or nucleic") | center
     mobile = universe.atoms - solute
-    return PBCGroups(solute=solute, mobile=mobile, center=ligand)
+    return PBCGroups(solute=solute, mobile=mobile, center=center)
 
 
 def apply_pbc_transformations(

@@ -80,6 +80,15 @@ class PreprocessConfig:
     ligand_selection: str | None = None
     """MDAnalysis selection string for the ligand. ``None`` triggers auto-detection."""
 
+    reference_structure: Path | None = None
+    """Optional protein-ligand structure defining the binding site for an apo trajectory."""
+
+    reference_coordinates: Path | None = None
+    """Optional coordinates loaded with ``reference_structure`` (for example an XTC)."""
+
+    reference_ligand_selection: str | None = None
+    """Ligand selection evaluated in ``reference_structure`` for apo analysis."""
+
     water_resnames: tuple[str, ...] = DEFAULT_WATER_RESNAMES
     ion_resnames: tuple[str, ...] = DEFAULT_ION_RESNAMES
 
@@ -123,6 +132,31 @@ class PreprocessConfig:
     output_dir: Path = Path("output")
 
     def __post_init__(self) -> None:
+        has_reference_structure = self.reference_structure is not None
+        has_reference_selection = self.reference_ligand_selection is not None
+        if has_reference_structure != has_reference_selection:
+            raise HydraRankError(
+                "reference_structure and reference_ligand_selection must be provided together"
+            )
+        if has_reference_structure and self.ligand_selection is not None:
+            raise HydraRankError(
+                "ligand_selection and reference_structure are mutually exclusive; use the "
+                "reference options only for a trajectory without a ligand"
+            )
+        if self.reference_coordinates is not None and not has_reference_structure:
+            raise HydraRankError(
+                "reference_coordinates requires reference_structure and reference_ligand_selection"
+            )
+        if (
+            has_reference_structure
+            and Path(self.reference_structure).suffix.lower() == ".tpr"
+            and self.reference_coordinates is None
+        ):
+            raise HydraRankError(
+                "a TPR reference_structure requires reference_coordinates (for example the "
+                "corresponding XTC or GRO); topology-only TPR coordinates are not a reliable "
+                "binding-site reference"
+            )
         if self.step < 1:
             raise HydraRankError(f"step must be >= 1, got {self.step}")
         if self.start < 0:
@@ -182,6 +216,11 @@ class PreprocessConfig:
             raise HydraRankError("configuration must define 'topology'")
         data["topology"] = _resolve(data["topology"], base)
 
+        if data.get("reference_structure") is not None:
+            data["reference_structure"] = _resolve(data["reference_structure"], base)
+        if data.get("reference_coordinates") is not None:
+            data["reference_coordinates"] = _resolve(data["reference_coordinates"], base)
+
         traj = data.get("trajectory") or []
         if isinstance(traj, str | Path):
             traj = [traj]
@@ -198,6 +237,12 @@ class PreprocessConfig:
     def to_dict(self) -> dict[str, Any]:
         out = dataclasses.asdict(self)
         out["topology"] = str(self.topology)
+        out["reference_structure"] = (
+            str(self.reference_structure) if self.reference_structure is not None else None
+        )
+        out["reference_coordinates"] = (
+            str(self.reference_coordinates) if self.reference_coordinates is not None else None
+        )
         out["trajectory"] = [str(p) for p in self.trajectory]
         out["output_dir"] = str(self.output_dir)
         out["water_resnames"] = list(self.water_resnames)

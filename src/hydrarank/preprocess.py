@@ -14,7 +14,12 @@ import numpy as np
 from MDAnalysis import AtomGroup, Universe
 from MDAnalysis.lib.distances import capped_distance
 
-from hydrarank.alignment import SiteAligner, build_reference, select_alignment_group
+from hydrarank.alignment import (
+    SiteAligner,
+    build_reference,
+    map_reference_group,
+    select_alignment_group,
+)
 from hydrarank.config import PreprocessConfig
 from hydrarank.data import WaterObservations
 from hydrarank.hbonds import (
@@ -23,7 +28,7 @@ from hydrarank.hbonds import (
     count_neighbours,
     find_polar_groups,
 )
-from hydrarank.io import frame_slice
+from hydrarank.io import frame_slice, load_reference_universe
 from hydrarank.pbc import (
     PBCGroups,
     apply_pbc_transformations,
@@ -46,8 +51,8 @@ class PreparedSystem:
     """A universe with the PBC and alignment machinery in place."""
 
     universe: Universe
-    ligand: AtomGroup
-    ligand_heavy: AtomGroup
+    ligand: AtomGroup | None
+    ligand_heavy: AtomGroup | None
     water: WaterTopology
     oxygens: AtomGroup
     groups: PBCGroups
@@ -65,15 +70,6 @@ class PreparedSystem:
 
 def prepare_system(universe: Universe, config: PreprocessConfig) -> PreparedSystem:
     """Run the selections, attach the PBC transformations and build the fit reference."""
-    ligand = select_ligand(
-        universe,
-        config.ligand_selection,
-        water_resnames=config.water_resnames,
-        ion_resnames=config.ion_resnames,
-        min_heavy_atoms=config.min_ligand_heavy_atoms,
-    )
-    ligand_roles = classify_atoms(ligand)
-    ligand_heavy = ligand[(ligand_roles != "H") & (ligand_roles != "M")]
     water = analyse_water_topology(select_water(universe, config.water_resnames))
 
     for name, cutoff in (
@@ -83,15 +79,52 @@ def prepare_system(universe: Universe, config: PreprocessConfig) -> PreparedSyst
         ("enclosure_radius", config.enclosure_radius),
     ):
         validate_cutoff(universe, cutoff, name=name)
-    groups = build_pbc_groups(universe, ligand)
-    apply_pbc_transformations(universe, groups)
-
     frames = frame_slice(config, universe.trajectory.n_frames)
     reference_frame = frames.start
-    universe.trajectory[reference_frame]
-    fit_group = select_alignment_group(universe, ligand, config.pocket_cutoff)
-    aligner = SiteAligner(build_reference(fit_group, frame=reference_frame))
-    solute = select_pocket(universe, ligand, config.pocket_cutoff) | ligand
+
+    reference_universe = load_reference_universe(config)
+    if reference_universe is None:
+        ligand = select_ligand(
+            universe,
+            config.ligand_selection,
+            water_resnames=config.water_resnames,
+            ion_resnames=config.ion_resnames,
+            min_heavy_atoms=config.min_ligand_heavy_atoms,
+        )
+        ligand_roles = classify_atoms(ligand)
+        ligand_heavy = ligand[(ligand_roles != "H") & (ligand_roles != "M")]
+        groups = build_pbc_groups(universe, ligand)
+        apply_pbc_transformations(universe, groups)
+        universe.trajectory[reference_frame]
+        fit_group = select_alignment_group(universe, ligand, config.pocket_cutoff)
+        aligner = SiteAligner(build_reference(fit_group, frame=reference_frame))
+        ligand_reference = ligand_heavy.positions.astype(np.float64, copy=True)
+        solute = select_pocket(universe, ligand, config.pocket_cutoff) | ligand
+    else:
+        reference_ligand = select_ligand(
+            reference_universe,
+            config.reference_ligand_selection,
+            water_resnames=config.water_resnames,
+            ion_resnames=config.ion_resnames,
+            min_heavy_atoms=config.min_ligand_heavy_atoms,
+        )
+        reference_roles = classify_atoms(reference_ligand)
+        reference_ligand_heavy = reference_ligand[
+            (reference_roles != "H") & (reference_roles != "M")
+        ]
+        reference_fit_group = select_alignment_group(
+            reference_universe, reference_ligand, config.pocket_cutoff
+        )
+        fit_group = map_reference_group(reference_fit_group, universe)
+        groups = build_pbc_groups(universe, fit_group)
+        apply_pbc_transformations(universe, groups)
+        universe.trajectory[reference_frame]
+        aligner = SiteAligner(build_reference(fit_group, frame=reference_frame))
+        reference_motion = aligner.fit(reference_fit_group.positions)
+        ligand_reference = reference_motion.apply(reference_ligand_heavy.positions)
+        ligand = None
+        ligand_heavy = None
+        solute = fit_group.residues.atoms
 
     return PreparedSystem(
         universe=universe,
@@ -104,7 +137,7 @@ def prepare_system(universe: Universe, config: PreprocessConfig) -> PreparedSyst
         aligner=aligner,
         frames=frames,
         reference_frame=reference_frame,
-        ligand_reference=ligand_heavy.positions.astype(np.float64, copy=True),
+        ligand_reference=ligand_reference,
         polar=find_polar_groups(solute),
     )
 
@@ -195,6 +228,15 @@ def run_preprocess(
             "reference_frame": system.reference_frame,
             "n_fit_atoms": int(system.fit_group.n_atoms),
             "ligand_selection": config.ligand_selection,
+            "reference_structure": (
+                str(config.reference_structure) if config.reference_structure is not None else None
+            ),
+            "reference_coordinates": (
+                str(config.reference_coordinates)
+                if config.reference_coordinates is not None
+                else None
+            ),
+            "reference_ligand_selection": config.reference_ligand_selection,
             "topology": str(config.topology),
             "trajectory": [str(p) for p in config.trajectory],
             **(

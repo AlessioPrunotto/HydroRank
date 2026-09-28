@@ -41,6 +41,25 @@ def load_universe(config: PreprocessConfig) -> Universe:
     return universe
 
 
+def load_reference_universe(config: PreprocessConfig) -> Universe | None:
+    """Load the optional protein-ligand structure used to define an apo binding site."""
+    if config.reference_structure is None:
+        return None
+    path = Path(config.reference_structure)
+    if not path.is_file():
+        raise FileNotFoundError(f"reference structure not found: {path}")
+    coordinates = config.reference_coordinates
+    if coordinates is not None:
+        coordinates = Path(coordinates)
+        if not coordinates.is_file():
+            raise FileNotFoundError(f"reference coordinates not found: {coordinates}")
+    universe = (
+        Universe(str(path), str(coordinates)) if coordinates is not None else Universe(str(path))
+    )
+    _validate(universe)
+    return universe
+
+
 def frame_slice(config: PreprocessConfig, n_frames: int) -> slice:
     """Translate the configured frame range into a slice, with bounds checking."""
     stop = n_frames if config.stop is None else min(config.stop, n_frames)
@@ -70,6 +89,7 @@ class SystemReport:
     ligand_label: str
     n_ligand_atoms: int
     n_ligand_heavy_atoms: int
+    ligand_is_reference: bool = False
     warnings: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -88,6 +108,7 @@ class SystemReport:
             "ligand_label": self.ligand_label,
             "n_ligand_atoms": self.n_ligand_atoms,
             "n_ligand_heavy_atoms": self.n_ligand_heavy_atoms,
+            "ligand_is_reference": self.ligand_is_reference,
             "warnings": self.warnings,
         }
 
@@ -102,7 +123,7 @@ class SystemReport:
             "Water",
             f"  molecules          : {self.n_waters} (resname {self.water_resname})",
             f"  model              : {self.water_model}",
-            "Ligand",
+            "Reference ligand" if self.ligand_is_reference else "Ligand",
             f"  selection          : {self.ligand_label}",
             f"  atoms              : {self.n_ligand_atoms} ({self.n_ligand_heavy_atoms} heavy)",
             "Residue composition",
@@ -127,9 +148,16 @@ def describe_system(
     """Run the selections and summarise them; raises if a mandatory one is empty."""
     water = select_water(universe, config.water_resnames)
     water_topology = analyse_water_topology(water)
+    reference_universe = load_reference_universe(config)
+    ligand_universe = reference_universe or universe
+    ligand_selection = (
+        config.reference_ligand_selection
+        if reference_universe is not None
+        else config.ligand_selection
+    )
     ligand = select_ligand(
-        universe,
-        config.ligand_selection,
+        ligand_universe,
+        ligand_selection,
         water_resnames=config.water_resnames,
         ion_resnames=config.ion_resnames,
         min_heavy_atoms=config.min_ligand_heavy_atoms,
@@ -150,7 +178,11 @@ def describe_system(
         messages.insert(0, "no periodic box information; PBC-aware preprocessing is impossible")
 
     ligand_resnames = sorted(set(ligand.residues.resnames))
-    label = config.ligand_selection or f"auto: resname {' '.join(ligand_resnames)}"
+    label = ligand_selection or f"auto: resname {' '.join(ligand_resnames)}"
+    if reference_universe is not None:
+        label = f"{label} in {config.reference_structure}"
+        if config.reference_coordinates is not None:
+            label += f" with {config.reference_coordinates}"
 
     report = SystemReport(
         n_atoms=universe.atoms.n_atoms,
@@ -167,6 +199,7 @@ def describe_system(
         ligand_label=label,
         n_ligand_atoms=ligand.n_atoms,
         n_ligand_heavy_atoms=_n_heavy(ligand),
+        ligand_is_reference=reference_universe is not None,
         warnings=messages,
     )
     return report, water_topology

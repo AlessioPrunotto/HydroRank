@@ -208,6 +208,13 @@ def _cache_key(config: PreprocessConfig) -> str:
     )
     payload = {name: getattr(config, name) for name in preprocessing_parameters}
     inputs = [config.topology, *config.trajectory]
+    if config.reference_structure is not None:
+        payload["reference_structure"] = config.reference_structure
+        payload["reference_coordinates"] = config.reference_coordinates
+        payload["reference_ligand_selection"] = config.reference_ligand_selection
+        inputs.append(config.reference_structure)
+    if config.reference_coordinates is not None:
+        inputs.append(config.reference_coordinates)
     payload["inputs"] = [_file_signature(Path(path)) for path in inputs]
     encoded = json_dumps(payload, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(encoded).hexdigest()

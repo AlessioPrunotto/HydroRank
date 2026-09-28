@@ -169,6 +169,23 @@ def _add_system_arguments(parser: argparse.ArgumentParser) -> None:
     group.add_argument("-s", "--topology", type=Path, help="topology file (PSF, TPR, PDB, ...)")
     parser.add_argument("-f", "--trajectory", type=Path, nargs="*", default=None)
     parser.add_argument("-l", "--ligand-selection", default=None)
+    parser.add_argument(
+        "--reference-structure",
+        type=Path,
+        default=None,
+        help="protein-ligand structure whose ligand defines the pocket for an apo trajectory",
+    )
+    parser.add_argument(
+        "--reference-coordinates",
+        type=Path,
+        default=None,
+        help="optional coordinates or trajectory loaded with --reference-structure",
+    )
+    parser.add_argument(
+        "--reference-ligand-selection",
+        default=None,
+        help="ligand selection evaluated in --reference-structure",
+    )
     parser.add_argument("--start", type=int, default=None)
     parser.add_argument("--stop", type=int, default=None)
     parser.add_argument("--step", type=int, default=None)
@@ -188,6 +205,9 @@ def _config_from_args(args: argparse.Namespace) -> PreprocessConfig:
     for name in (
         "trajectory",
         "ligand_selection",
+        "reference_structure",
+        "reference_coordinates",
+        "reference_ligand_selection",
         "start",
         "stop",
         "step",
