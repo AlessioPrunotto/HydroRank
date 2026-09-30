@@ -1,0 +1,110 @@
+{
+  "temperature_K": 303.15,
+  "common_frame": {
+    "reference": "3RLP HydraRank frame",
+    "n_ca_atoms": 61,
+    "fit_rmsd_A": {
+      "apo": 0.36095933986626255,
+      "3rlp": 0.0,
+      "3rlq": 0.8982621289683119,
+      "3rlr": 0.9752714586134058
+    }
+  },
+  "crystal_to_simulation_fit_rmsd_A": {
+    "3rlp": 0.8704108893325747,
+    "3rlq": 0.283041341208653,
+    "3rlr": 0.3191439492389704
+  },
+  "paper_targets": [
+    {
+      "label": "W3",
+      "source_structure": "3RLP",
+      "resid": 3,
+      "coordinate": [
+        37.90978948651622,
+        43.46074085935777,
+        38.73257646985456
+      ],
+      "bfactor": 8.22,
+      "fit_rmsd": 1.1263164365622444
+    },
+    {
+      "label": "W249",
+      "source_structure": "3RLQ",
+      "resid": 249,
+      "coordinate": [
+        41.78145410110276,
+        47.33486106905676,
+        38.988595238079476
+      ],
+      "bfactor": 20.72,
+      "fit_rmsd": 0.44331290977856513
+    },
+    {
+      "label": "W286",
+      "source_structure": "3RLQ",
+      "resid": 286,
+      "coordinate": [
+        38.71839289971289,
+        47.02247204682242,
+        39.07924939037004
+      ],
+      "bfactor": 30.07,
+      "fit_rmsd": 0.44331290977856513
+    }
+  ],
+  "incremental_steric_coverage": [
+    {
+      "system": "3RLP",
+      "n_sterically_occupied_apo_sites": 6,
+      "sum_apo_scores": 11.286931603772834,
+      "sites": [
+        3,
+        7,
+        11,
+        12,
+        16,
+        17
+      ]
+    },
+    {
+      "system": "3RLQ",
+      "n_sterically_occupied_apo_sites": 9,
+      "sum_apo_scores": 17.9051602824888,
+      "sites": [
+        3,
+        4,
+        7,
+        9,
+        11,
+        12,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "system": "3RLR",
+      "n_sterically_occupied_apo_sites": 9,
+      "sum_apo_scores": 17.748569729674397,
+      "sites": [
+        2,
+        3,
+        4,
+        7,
+        9,
+        11,
+        12,
+        16,
+        17
+      ]
+    }
+  ],
+  "limitations": [
+    "One 50 ns trajectory per state; no independent replicas.",
+    "The apo trajectory retained crystallographic waters at initialization.",
+    "Crystal-water occupancy is not a thermodynamic ground truth.",
+    "W286 is not robustly recovered by the conventional 3RLQ trajectory.",
+    "Three complexes support a qualitative series comparison, not a fitted affinity model."
+  ]
+}

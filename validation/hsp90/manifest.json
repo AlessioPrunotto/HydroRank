@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "path": "validation/hsp90/run_validation.py",
+      "size": 35198,
+      "sha256": "8f320aa8891b667770f793dae3f634521770d14be5cc67f4973738661a8859bf"
+    },
+    {
+      "path": "examples/hsp90_apo.yaml",
+      "size": 641,
+      "sha256": "9b7c0de0e73f49644ddb611123b63fff190a5668a42c00e7f7e65050621d68bc"
+    },
+    {
+      "path": "examples/hsp90_3rlp.yaml",
+      "size": 438,
+      "sha256": "2a40e9726d65e6e2de6b9dbcad4de93be8b8b9ee71089419052c000dd323d1f3"
+    },
+    {
+      "path": "examples/hsp90_3rlq.yaml",
+      "size": 438,
+      "sha256": "f463dcdd78cd9322c3f5ad23ff8e7b5aa1d9dc3b5dbdd1c6fab6806726e66d90"
+    },
+    {
+      "path": "examples/hsp90_3rlr.yaml",
+      "size": 438,
+      "sha256": "972516d03abb57b946fd48f13a3678218a6542369e3abc09a32dcaf3846ca496"
+    },
+    {
+      "path": "output/hsp90/apo/results.json",
+      "size": 16609,
+      "sha256": "e7e5fbb6f31c43960f35de166d7f8f385dd3722bcb37b496eebec051154ecb6c"
+    },
+    {
+      "path": "output/hsp90/3rlp/results.json",
+      "size": 16432,
+      "sha256": "6a20d239b5205e052a0e527eb2b8c78d635339b5dfd9eac66ac88b03ff824450"
+    },
+    {
+      "path": "output/hsp90/3rlq/results.json",
+      "size": 15050,
+      "sha256": "b68a12fb4423f8d8570e5da59507c3b5bbe40d46dd778f88df92a2185fe1e107"
+    },
+    {
+      "path": "output/hsp90/3rlr/results.json",
+      "size": 13650,
+      "sha256": "0273a9aa49a5616f5a8fd2be3c6e099862bf8c92cc1f35060ee3b195b459b7fc"
+    }
+  ]
+}

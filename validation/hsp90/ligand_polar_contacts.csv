@@ -1,0 +1,6 @@
+structure,ligand,ligand_atom,protein_residue,protein_atom,distance_A,interpretation
+3RLP,3RP,N3,ASP93,OD2,2.7368087255049462,polar heavy-atom contact; hydrogen-bond geometry not assigned
+3RLQ,3RQ,N3,ASP93,OD2,2.6184596617095313,polar heavy-atom contact; hydrogen-bond geometry not assigned
+3RLQ,3RQ,N4,ASN51,ND2,3.3263830206396836,polar heavy-atom contact; hydrogen-bond geometry not assigned
+3RLR,3RR,N3,ASP93,OD2,2.6366732827561314,polar heavy-atom contact; hydrogen-bond geometry not assigned
+3RLR,3RR,N4,ASN51,ND2,3.1985463885959233,polar heavy-atom contact; hydrogen-bond geometry not assigned
