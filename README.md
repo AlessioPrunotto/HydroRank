@@ -341,7 +341,7 @@ uv run ruff format src tests
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution requirements,
 [docs/api.md](docs/api.md) for the Python API, and
-[benchmarks/README.md](benchmarks/README.md) for reproducible performance commands.
+[docs/benchmarking.md](docs/benchmarking.md) for reproducible performance commands.
 Release changes are recorded in [CHANGELOG.md](CHANGELOG.md); citation metadata is provided
 in [CITATION.cff](CITATION.cff). A journal-neutral draft software manuscript and its BibTeX
 library are available in [paper/manuscript.md](paper/manuscript.md) and
