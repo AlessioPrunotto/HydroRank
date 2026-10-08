@@ -1,14 +1,20 @@
 """Superposition of every frame onto a common binding-site reference frame.
 
 Hydration sites only exist in a frame where the pocket does not move, so all
-coordinates are rigid-body fitted onto a reference. The fit uses the binding-site
-protein backbone rather than the whole protein (domain motions would smear the
-pocket) or the ligand alone (unstable for small or symmetric ligands, and it would
-make the protein move instead).
+coordinates are rigid-body fitted onto a reference. The fit uses the
+binding-site protein backbone rather than the whole protein (domain motions
+would smear the pocket) or the ligand alone (unstable for small or symmetric
+ligands, and it would make the protein move instead).
 
-The per-frame RMSD returned by the aligner is a diagnostic that must be inspected:
-a poor fit inflates the apparent positional spread of the waters, which downstream
-looks exactly like disorder and produces false "easy to displace" hits.
+The per-frame RMSD returned by the aligner is a diagnostic that must be
+inspected: if this is moving too much, it may be a sign that the alignment
+didn't work properly.
+In this scenario, the waters turmoil may be an artifact, and the "easy to
+displace" flags may not be reliable. However, unstable RMSD may also reflect
+genuine flexibility of the binding site.
+Therefore, this will be flagged with just a warning rather than an error, and
+it is the responsibility of the user to inspect the binding pocket modes and
+decide which case applies.
 """
 
 from __future__ import annotations

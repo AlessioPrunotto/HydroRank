@@ -84,8 +84,8 @@ GRO, but required when `reference_structure` is a TPR.
 - `write_analysis_plots(analysis, directory)` writes occupancy, residence, and convergence plots.
 - `write_ranking_plot(ranking, directory)` writes a spatial score map.
 
-The plotting API requires the `plots` optional dependency. The ranking score is a heuristic
-prioritisation signal, not a computed displacement free energy.
+The plotting API requires the `plots` optional dependency.
+Bear in mind that the ranking score is a prioritisation heuristic, not a displacement free energy.
 
 ## Progress callbacks
 

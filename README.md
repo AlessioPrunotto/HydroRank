@@ -1,11 +1,11 @@
 # HydraRank
 
-Light-weight hydration-site analysis for ligand design: given an MD trajectory of a
-protein–ligand complex, identify the water molecules around the ligand that would be
+HydraRank is a light-weight hydration-site analysis for supporting ligand design: given an MD trajectory of a
+protein–ligand complex, it identifies the water molecules around the ligand that would be
 **entropically favourable to displace**.
 
 Existing tools for this are either commercial (WaterMap), unmaintained and pinned to
-old Python (SSTMap, WaterKit), or expensive (GIST). This package aims to be a small,
+old Python (SSTMap, WaterKit), or computationally expensive (GIST). This package aims to be a small,
 installable, testable alternative built on MDAnalysis, NumPy and SciPy.
 
 > **Status: early development.** The pipeline runs end to end: preprocessing, hydration

@@ -16,7 +16,7 @@ This is strong evidence of implementation-level spatial concordance for 3RLP. It
 | −TΔS total (kcal/mol) | 0.994 | 0.991 | -0.084 | 0.267 | 0.356 |
 | Solute H-bonds (native definitions) | 0.943 | 0.923 | 0.279 | 0.279 | 0.507 |
 
-Positive entropy values above are the unfavorable cost **−TΔS**. HydraRank's dimensionless entropies were converted with −RTΔS/R at 303.15 K. SSTMap's reported 300 K TΔS values were sign-inverted and multiplied by 303.15/300; this is an exact temperature normalization for SSTMap's linear T·S conversion and does not require rerunning its trajectory analysis. The bootstrap intervals in `metrics.json` describe across-site variation only and are **not trajectory-sampling confidence intervals**.
+Positive entropy values above are the unfavorable cost **−TΔS**. HydraRank's dimensionless entropies were converted with −RTΔS/R at 303.15 K. SSTMap's reported 300 K TΔS values were sign-inverted and multiplied by 303.15/300. The bootstrap intervals in `metrics.json` describe across-site variation only and are **not trajectory-sampling confidence intervals**.
 
 ## What can and cannot be compared
 
@@ -36,7 +36,9 @@ The locally aligned definitive SSTMap calculation gives 21 sites; the earlier wh
 
 ## Interpretation and next validation steps
 
-For 3RLP, the tools agree exceptionally well on where the principal waters are, but quantitative thermodynamic agreement must be judged from the statistics above rather than inferred from spatial overlap. Any systematic entropy offset is scientifically plausible because the tools do not have identical estimators and implementation details.
+For 3RLP, HydraRank and SSTMap identify nearly the same hydration-site positions. However, agreement on positions alone does not establish agreement on the properties of those sites. But in this case, the matched-site statistics also show close agreement in estimated entropy costs: total −TΔS has Pearson r=0.994, a mean absolute difference of 0.267 kcal/mol, and a mean HydraRank − SSTMap difference of −0.084 kcal/mol. This supports agreement in the entropy component of the thermodynamic description.
+
+Differences in the entropy estimators and their implementations can produce systematic offsets even when the site-to-site trends agree closely. The small mean offset observed here should therefore be reported alongside the correlation, rather than assuming that the two methods give identical absolute values.
 
 The next defensible validation step is to repeat the controlled analysis for 3RLQ and 3RLR, then measure convergence by trajectory blocks or independent replicas. Experimental displacement data or ligand-series affinity changes would be needed to test whether HydraRank's product-level ranking is predictive; SSTMap alone is a computational comparator, not ground truth.
 

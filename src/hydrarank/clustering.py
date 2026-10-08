@@ -22,7 +22,7 @@ from hydrarank.exceptions import HydraRankError
 
 #: Radius of a hydration site: roughly half the O-O distance of two hydrogen-bonded
 #: waters, so that two sites cannot describe the same water.
-DEFAULT_SITE_RADIUS = 1.0
+DEFAULT_SITE_RADIUS = 1.0  # more or less the size of a water molecule
 
 # A quarter-radius grid resolves a 1 A hydration site much more finely than the
 # positional fluctuations being measured, while reducing hundreds of thousands of
