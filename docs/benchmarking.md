@@ -1,5 +1,10 @@
 # Reproducible performance benchmark
 
+For the controlled HydraRank–SSTMap HSA/GIST pilot, resource monitoring, raw
+measurements, and implementation limitations, see
+[`comparison/performance/`](../comparison/performance/README.md). The commands
+below are lightweight HydraRank-only smoke timings, not a cross-tool comparison.
+
 The bundled 200 ps 3RLP slice is a software smoke-test and performance fixture, not a
 scientifically converged dataset. Run benchmarks from the repository root on an otherwise
 idle machine and record the package version, Python version, hardware, and command output.

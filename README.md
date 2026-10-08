@@ -8,10 +8,15 @@ Existing tools for this are either commercial (WaterMap), unmaintained and pinne
 old Python (SSTMap, WaterKit), or computationally expensive (GIST). This package aims to be a small,
 installable, testable alternative built on MDAnalysis, NumPy and SciPy.
 
-> **Status: early development.** The pipeline runs end to end: preprocessing, hydration
-> sites, occupancy, residence times, entropy proxies, solute hydrogen bonds and a
-> heuristic ranking of displaceable waters. The ranking is intended for prioritisation,
-> not as a rigorously validated displacement free energy.
+> **Status: research software with retrospective validation.** The complete analysis
+> workflow is implemented and covered by automated tests. Retrospective HSP90 validation
+> reproduces the W3 and W249 displacement patterns, while exposing limitations for W286
+> and apo sampling; a matched-trajectory SSTMap comparison supports agreement in site
+> positions and entropy ordering. Ranking remains a prioritisation heuristic, not a
+> displacement free energy or binding-affinity prediction. Independent-replica
+> reproducibility and prospective predictive performance remain to be established.
+> See the [HSP90 validation](validation/hsp90/summary.md) and
+> [SSTMap comparison](comparison/3rlp/report.md) for evidence and limitations.
 
 ## Installation
 
@@ -281,55 +286,34 @@ numbers in different segments.
 Options passed explicitly on the command line override values loaded from a YAML
 configuration file.
 
-## Design notes
+## Method and limitations
 
-- **Water is matched by an explicit resname list**, not by the built-in `water`
-  keyword: MDAnalysis and MDTraj do not know about `OPC`, which silently yields an
-  empty selection (the same bug that makes SSTMap fail on OPC systems).
-- **Atom roles are assigned by mass, not by name.** Water oxygens are called `OW`,
-  `OH2` or `O` depending on the force field, and 4-/5-site models carry a massless
-  virtual site (`MW`, `EPW`) that must be excluded from all geometry.
-- **The tool refuses to guess.** Ligand auto-detection raises rather than picking one
-  of several candidates, and empty selections raise with the list of residue names
-  actually present.
-- **Sampling adequacy is reported, not assumed.** Frame spacing and frame count are
-  checked against water residence timescales up front.
-- **The PBC stack has one correct order**: unwrap the solute, centre the ligand in the
-  box, then wrap everything else *by residue*. Wrapping first splits molecules; wrapping
-  by atom splits waters. After this, plain Euclidean distances are valid in the pocket,
-  and the rest of the pipeline can ignore periodicity. Cutoffs are checked against half
-  the shortest box vector so the minimum-image convention is never violated.
-- **Frames are fitted on the binding-site backbone**, not on the whole protein (domain
-  motions smear the pocket) and not on the ligand alone (unstable for small or symmetric
-  ligands, and it would make the protein move instead). The per-frame fit RMSD is
-  reported because a poor fit inflates the apparent positional spread of the waters,
-  which downstream looks exactly like disorder and produces false "easy to displace"
-  hits.
-- **The hydration shell is defined against the reference ligand pose**, in the aligned
-  frame, not against the moving ligand. A region that follows the ligand's wobble would
-  make site occupancies depend on ligand motion rather than on water behaviour.
-- **Sites come from density-peak clustering**, the scheme WaterMap and SSTMap use:
-  repeatedly take the position with the most neighbours within 1 Å, call it a site,
-  remove the waters it claims, and stop when no remaining peak is denser than bulk water
-  (0.0333 molecules Å⁻³). It needs only a KD-tree, is deterministic, and yields sites of
-  a fixed physical radius — unlike k-means, which needs the number of sites up front, or
-  DBSCAN, whose clusters can grow into elongated blobs spanning several real sites.
-- **Entropies are measured against bulk water, not against nothing.** Both estimators are
-  nearest-neighbour (Kozachenko-Leonenko) estimates of the excess entropy per water: the
-  translational term against a uniform fluid at 0.0333 molecules Å⁻³, the orientational
-  term against uniformly random orientations. Zero therefore means "already bulk-like,
-  nothing to gain", which is exactly the question being asked. This is the first-order
-  inhomogeneous-solvation-theory approximation of WaterMap and SSTMap: water-water
-  correlations are ignored, which is what makes it cheap.
-- **The two hydrogens are treated as indistinguishable.** A half turn about the dipole
-  axis maps a water onto itself, so the orientational estimator searches the symmetry
-  orbit and folds the reference measure by the same factor. Skipping this makes every
-  site look ~0.69 gas-constant units more ordered than it is.
-- **Estimators return `nan` rather than a plausible-looking number** when a site holds
-  fewer than ten observations.
-- **Ranking combines ordering and solute interactions.** The displacement score subtracts
-  a configurable penalty per mean water-solute hydrogen bond from `-TdS`. Categories carry
-  the main interpretation; the heuristic score is only a tie-breaker.
+- **Inputs and selections:** complete analysis requires masses, bonds, explicit water
+  hydrogens, and periodic-box information. Water residue names are configurable, and
+  ambiguous ligand selections stop the analysis.
+- **PBC and local alignment:** HydraRank makes the solute whole, centres the ligand or
+  apo pocket anchor, and wraps other molecules by residue before fitting the local
+  protein pocket. Longest-bond and fit-RMSD diagnostics help identify preprocessing
+  problems; passing them does not establish scientific reliability.
+- **Fixed analysis region:** water observations are collected around a fixed reference
+  ligand pose in the aligned frame. For apo analysis, that pose defines the region
+  without adding ligand interactions to the simulation.
+- **Site definition:** density-peak clustering uses a configurable radius (default
+  1.0 Å) and observation-count threshold (default twice bulk density). The resulting
+  number and identity of sites depend on these choices.
+- **Entropy and ranking:** first-order excess-entropy proxies describe water ordering
+  relative to bulk. The score subtracts a heuristic water–solute hydrogen-bond penalty;
+  enclosure is reported separately. Interaction energies and higher-order solvent
+  correlations are omitted, so scores and categories do not establish displacement
+  free energies or affinity changes.
+- **Sampling:** frame-count and spacing warnings flag potential problems, but do not
+  establish adequate sampling. Inspect block convergence and, where available,
+  independent replicas before interpreting occupancy, residence, entropy, or ranking.
+  Ten valid observations permit an entropy estimate; they do not guarantee convergence.
+
+See [Methodology and interpretation](docs/methodology.md) for the design rationale,
+defaults, and diagnostic limits, and the [HSP90 validation](validation/hsp90/summary.md)
+for the current scientific evidence.
 
 ## Development
 

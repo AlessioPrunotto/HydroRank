@@ -22,6 +22,9 @@ Changelog, and releases use semantic versioning.
 
 ### Changed
 
+- README status now reflects retrospective validation; detailed design rationale and
+  interpretation limits are documented in `docs/methodology.md`.
+
 - Orientational entropy now uses an exact symmetry-aware KD-tree search, reducing its
   memory scaling from quadratic to linear for long trajectories.
 - Periodic unwrapping and residue wrapping are vectorised, allowing multi-gigabyte

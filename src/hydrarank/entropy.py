@@ -8,8 +8,11 @@ negative for ordered sites.
 
 This is the first-order inhomogeneous-solvation-theory approximation used by
 WaterMap and SSTMap: translational and orientational contributions are treated
-separately and water-water correlations are ignored. It is much cheaper than a full
-GIST grid and, for ranking sites against each other, usually good enough.
+separately and water-water correlations are ignored. KD-tree searches avoid
+constructing an explicit pairwise-distance matrix, and calculations are restricted
+to detected sites. GIST also uses first-order nearest-neighbour entropy estimates;
+workflow timings do not establish an intrinsic advantage of this entropy estimator.
+Runtime and the reliability of site rankings require workload-specific validation.
 """
 
 from __future__ import annotations
