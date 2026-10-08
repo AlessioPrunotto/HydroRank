@@ -104,7 +104,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 def prepared_systems():
     prepared = {}
     for system in SYSTEMS:
-        config = PreprocessConfig.from_yaml(ROOT / "examples" / f"hsp90_{system}.yaml")
+        config = PreprocessConfig.from_yaml(HERE / f"hsp90_{system}.yaml")
         prepared[system] = prepare_system(load_universe(config), config)
     return prepared
 
@@ -953,7 +953,7 @@ def main() -> None:
 
     tracked = [
         HERE / "run_validation.py",
-        *[ROOT / "examples" / f"hsp90_{system}.yaml" for system in SYSTEMS],
+        *[HERE / f"hsp90_{system}.yaml" for system in SYSTEMS],
         *[OUTPUT / system / "results.json" for system in SYSTEMS],
     ]
     manifest = {

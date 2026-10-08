@@ -1,0 +1,22 @@
+# Software demonstration only: this 3RLP slice contains 101 frames at 2 ps spacing
+# (200 ps total) and is too short for scientific interpretation of residence,
+# entropy, or displacement rankings. Paths are resolved relative to this file.
+topology: data/hsp90_3rlp_demo/step5.tpr
+trajectory:
+  - data/hsp90_3rlp_demo/step5_0_200ps.xtc
+
+ligand_selection: resname 3RP
+
+start: 0
+stop: null
+step: 1
+
+water_cutoff: 5.0
+pocket_cutoff: 8.0
+site_radius: 1.0
+density_factor: 2.0
+temperature: 303.15
+max_gap: 0
+hbond_penalty: 1.0
+
+output_dir: ../output/demo

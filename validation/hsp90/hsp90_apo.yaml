@@ -1,0 +1,23 @@
+# Apo HSP90 alpha N-terminal domain derived from 3RLP.
+# The 3RLP ligand is a non-interacting spatial reference: it defines the common
+# hydration region and pocket alignment but is absent from the simulated system.
+topology: ../../sample_traj/apo_form/step5.tpr
+trajectory:
+  - ../../sample_traj/apo_form/step5.xtc
+reference_structure: ../../sample_traj/3rlp/step5.tpr
+reference_coordinates: ../../sample_traj/3rlp/step5.xtc
+reference_ligand_selection: resname 3RP
+
+start: 0
+stop: null
+step: 1
+
+water_cutoff: 5.0
+pocket_cutoff: 8.0
+site_radius: 1.0
+density_factor: 2.0
+temperature: 303.15
+max_gap: 0
+hbond_penalty: 1.0
+
+output_dir: ../../output/hsp90/apo

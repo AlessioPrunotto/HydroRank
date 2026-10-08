@@ -1,0 +1,20 @@
+# HSP90 alpha N-terminal domain, PDB-derived system 3RLR (ligand 3RR).
+# The 50 ns trajectory contains 25,001 frames at 2 ps spacing.
+topology: ../../sample_traj/3rlr/step5.tpr
+trajectory:
+  - ../../sample_traj/3rlr/step5.xtc
+ligand_selection: resname 3RR
+
+start: 0
+stop: null
+step: 1
+
+water_cutoff: 5.0
+pocket_cutoff: 8.0
+site_radius: 1.0
+density_factor: 2.0
+temperature: 303.15
+max_gap: 0
+hbond_penalty: 1.0
+
+output_dir: ../../output/hsp90/3rlr
