@@ -1,0 +1,86 @@
+{
+  "atom_order": "exact names/resnames/resindices match",
+  "atom_count": 62822,
+  "opc_oxygen_indices": "exact match",
+  "opc_oxygen_count": 14799,
+  "preparation": {
+    "n_frames": 1001,
+    "n_fit_atoms": 61,
+    "historical_fit_group_rmsd_A": [
+      0.0055236229839018955,
+      0.011546834199278672,
+      0.010657180214671021
+    ],
+    "max_fit_rmsd_A": 0.8651624437586385,
+    "stages": [
+      {
+        "name": "raw_prefix_export",
+        "seconds": 2.607438708189875,
+        "depth": 0
+      },
+      {
+        "name": "alignment_initialization",
+        "seconds": 1.566926040686667,
+        "depth": 0
+      },
+      {
+        "name": "alignment_and_export",
+        "seconds": 11.398003791924566,
+        "depth": 0
+      }
+    ]
+  },
+  "gist_reference_box": {
+    "lower_A": [
+      31.0,
+      32.0,
+      31.5
+    ],
+    "upper_A": [
+      49.0,
+      49.5,
+      47.0
+    ],
+    "spacing_A": 0.5,
+    "dimensions": [
+      36,
+      35,
+      31
+    ],
+    "volume_A3": 4882.5,
+    "frames": 1001,
+    "reference_mean_waters": 33.922077922077925,
+    "reference_min_waters": 27,
+    "reference_max_waters": 40,
+    "boundary": "lower inclusive, upper exclusive; independent Cartesian count, not GIST output"
+  },
+  "preflight_hsa_full_and_reduced": "identical site positions, occupancies and entropy; reduced energies zero",
+  "hydra_to_hsa_nearest_center_A": [
+    0.0117553697806226,
+    0.12189190851113317,
+    0.006128041593670124,
+    0.0964599734700573,
+    0.005403257584035653,
+    0.07468850470150751,
+    0.11515110903481104,
+    0.04171810324282762,
+    1.6380016930875552,
+    0.00816826549534843,
+    2.7954709525012573,
+    0.286502525411571,
+    0.5647637067662333,
+    0.24609332523982946,
+    0.004705701400236795,
+    0.17627853086330927,
+    2.582455034311405,
+    0.140176523973117,
+    0.3549508409080478,
+    0.005309722318868323,
+    0.176087886226824
+  ],
+  "hydra_short_site_count": 21,
+  "sst_short_site_count": 19,
+  "cache_reuse": {
+    "cached_hydrarank_501": true
+  }
+}

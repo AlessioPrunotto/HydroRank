@@ -1,0 +1,5066 @@
+[
+  {
+    "kind": "monitor_overhead",
+    "repeat": 0,
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 0.6565755419433117,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "-c",
+      "import hashlib; b=b\"x\"*1048576; [hashlib.sha256(b).digest() for _ in range(1500)]"
+    ],
+    "monitored": false,
+    "sampled_tree_peak_rss_bytes": null,
+    "peak_processes": null,
+    "peak_threads": null,
+    "output_bytes": 777,
+    "sampled_peak_disk_bytes": 777,
+    "output_files": 2,
+    "os_wall_seconds": 0.61,
+    "user_seconds": 0.6,
+    "system_seconds": 0.0,
+    "os_peak_rss_bytes": 15712256,
+    "page_faults": 41,
+    "page_reclaims": 1566,
+    "block_inputs": 0,
+    "block_outputs": 0
+  },
+  {
+    "kind": "monitor_overhead",
+    "repeat": 0,
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 1.0368538340553641,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "-c",
+      "import hashlib; b=b\"x\"*1048576; [hashlib.sha256(b).digest() for _ in range(1500)]"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 16826368,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 777,
+    "sampled_peak_disk_bytes": 777,
+    "output_files": 2,
+    "os_wall_seconds": 0.61,
+    "user_seconds": 0.61,
+    "system_seconds": 0.0,
+    "os_peak_rss_bytes": 15826944,
+    "page_faults": 41,
+    "page_reclaims": 1573,
+    "block_inputs": 0,
+    "block_outputs": 0
+  },
+  {
+    "kind": "monitor_overhead",
+    "repeat": 1,
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 0.6628153747878969,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "-c",
+      "import hashlib; b=b\"x\"*1048576; [hashlib.sha256(b).digest() for _ in range(1500)]"
+    ],
+    "monitored": false,
+    "sampled_tree_peak_rss_bytes": null,
+    "peak_processes": null,
+    "peak_threads": null,
+    "output_bytes": 777,
+    "sampled_peak_disk_bytes": 777,
+    "output_files": 2,
+    "os_wall_seconds": 0.62,
+    "user_seconds": 0.61,
+    "system_seconds": 0.0,
+    "os_peak_rss_bytes": 15777792,
+    "page_faults": 41,
+    "page_reclaims": 1570,
+    "block_inputs": 0,
+    "block_outputs": 0
+  },
+  {
+    "kind": "monitor_overhead",
+    "repeat": 1,
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 1.0401205830276012,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "-c",
+      "import hashlib; b=b\"x\"*1048576; [hashlib.sha256(b).digest() for _ in range(1500)]"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 16629760,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 777,
+    "sampled_peak_disk_bytes": 777,
+    "output_files": 2,
+    "os_wall_seconds": 0.61,
+    "user_seconds": 0.6,
+    "system_seconds": 0.0,
+    "os_peak_rss_bytes": 15630336,
+    "page_faults": 41,
+    "page_reclaims": 1561,
+    "block_inputs": 0,
+    "block_outputs": 0
+  },
+  {
+    "kind": "monitor_overhead",
+    "repeat": 2,
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 0.6640326660126448,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "-c",
+      "import hashlib; b=b\"x\"*1048576; [hashlib.sha256(b).digest() for _ in range(1500)]"
+    ],
+    "monitored": false,
+    "sampled_tree_peak_rss_bytes": null,
+    "peak_processes": null,
+    "peak_threads": null,
+    "output_bytes": 777,
+    "sampled_peak_disk_bytes": 777,
+    "output_files": 2,
+    "os_wall_seconds": 0.64,
+    "user_seconds": 0.62,
+    "system_seconds": 0.01,
+    "os_peak_rss_bytes": 15712256,
+    "page_faults": 41,
+    "page_reclaims": 1568,
+    "block_inputs": 0,
+    "block_outputs": 0
+  },
+  {
+    "kind": "monitor_overhead",
+    "repeat": 2,
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 1.04101258283481,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "-c",
+      "import hashlib; b=b\"x\"*1048576; [hashlib.sha256(b).digest() for _ in range(1500)]"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 16547840,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 777,
+    "sampled_peak_disk_bytes": 777,
+    "output_files": 2,
+    "os_wall_seconds": 0.61,
+    "user_seconds": 0.6,
+    "system_seconds": 0.0,
+    "os_peak_rss_bytes": 15564800,
+    "page_faults": 41,
+    "page_reclaims": 1557,
+    "block_inputs": 0,
+    "block_outputs": 0
+  },
+  {
+    "kind": "preparation",
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 17.210421541240066,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "prepare",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation",
+      "--frames",
+      "1001",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 226869248,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 433035045,
+    "sampled_peak_disk_bytes": 433035045,
+    "output_files": 9,
+    "os_wall_seconds": 16.96,
+    "user_seconds": 16.0,
+    "system_seconds": 0.55,
+    "os_peak_rss_bytes": 231407616,
+    "page_faults": 939,
+    "page_reclaims": 22366,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "prepare",
+    "frames": 1001,
+    "workers": "single",
+    "name": "preparation",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 1001,
+        "historical_fit_group_rmsd_A": [
+          0.0055236229839018955,
+          0.011546834199278672,
+          0.010657180214671021
+        ]
+      },
+      "stages": [
+        {
+          "name": "raw_prefix_export",
+          "seconds": 2.607438708189875,
+          "depth": 0
+        },
+        {
+          "name": "alignment_initialization",
+          "seconds": 1.566926040686667,
+          "depth": 0
+        },
+        {
+          "name": "alignment_and_export",
+          "seconds": 11.398003791924566,
+          "depth": 0
+        }
+      ]
+    }
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 6.775706624612212,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preflight_hydrarank",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 164429824,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 170489,
+    "sampled_peak_disk_bytes": 170489,
+    "output_files": 9,
+    "os_wall_seconds": 6.33,
+    "user_seconds": 6.06,
+    "system_seconds": 0.1,
+    "os_peak_rss_bytes": 164003840,
+    "page_faults": 398,
+    "page_reclaims": 17715,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 101,
+    "workers": "single",
+    "name": "preflight_hydrarank",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "n_sites": 21,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.415841584158414,
+        "warnings": [
+          "only 101 frames selected; per-site statistics will be noisy (a few thousand frames is a reasonable target)"
+        ]
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.21943229204043746,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.20885704224929214,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.5340219582431018,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 5.316303125116974,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.034896000288426876,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00020308326929807663,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005265828222036362,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.762488141655922e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0002554580569267273,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.27498733997345e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00025024963542819023,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.450029417872429e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00024025002494454384,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.933378219604492e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00024412525817751884,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.416587322950363e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00023570843040943146,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.77499920129776e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018804194405674934,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.179232150316238e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018149986863136292,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.129173561930656e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018629198893904686,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.8040954172611237e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00016854191198945045,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.224999040365219e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00015408266335725784,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.3791794925928116e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00014704186469316483,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.0166621804237366e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0001365416683256626,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.9083027988672256e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013641687110066414,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.5958906412124634e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00014591682702302933,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.429183900356293e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013366620987653732,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.21660952270031e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012691691517829895,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.137493669986725e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0001227082684636116,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.1833147406578064e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011708308011293411,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.1416846215724945e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012974999845027924,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.1665975004434586e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011508306488394737,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.010826750192791224,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.0002071247436106205,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.0032001249492168427,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "preflight"
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 25.529678374994546,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preflight_hsa_full",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 537067520,
+    "peak_processes": 2,
+    "peak_threads": 3,
+    "output_bytes": 668589,
+    "sampled_peak_disk_bytes": 668589,
+    "output_files": 346,
+    "os_wall_seconds": 25.34,
+    "user_seconds": 23.84,
+    "system_seconds": 0.68,
+    "os_peak_rss_bytes": 536625152,
+    "page_faults": 2515,
+    "page_reclaims": 61210,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 101,
+    "workers": "single",
+    "name": "preflight_hsa_full",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.099918875,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.6944865,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.022077166999999065,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.018523874999999634,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.0028356669999993755,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 17.43068575,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.02833324999999931,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "preflight"
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 23.97206020914018,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preflight_hsa_reduced",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 527466496,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 463824,
+    "sampled_peak_disk_bytes": 463824,
+    "output_files": 195,
+    "os_wall_seconds": 23.65,
+    "user_seconds": 22.69,
+    "system_seconds": 0.36,
+    "os_peak_rss_bytes": 541097984,
+    "page_faults": 74,
+    "page_reclaims": 63681,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 101,
+    "workers": "single",
+    "name": "preflight_hsa_reduced",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.228948458,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.7452053749999994,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.02167866599999968,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.019570292000000933,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.0022498340000005612,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 15.997549333,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.01453566700000053,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "preflight"
+  },
+  {
+    "status": "failed",
+    "exit_code": -11,
+    "wall_seconds": 6.251737708225846,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "gist_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preflight_gist_full",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 534036480,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 147550,
+    "sampled_peak_disk_bytes": 147550,
+    "output_files": 3,
+    "os_wall_seconds": 6.04,
+    "user_seconds": 5.48,
+    "system_seconds": 0.23,
+    "os_peak_rss_bytes": 549060608,
+    "page_faults": 492,
+    "page_reclaims": 54896,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "gist_full",
+    "frames": 101,
+    "workers": "single",
+    "name": "preflight_gist_full",
+    "spacing": 0.5,
+    "padding": 5,
+    "kind": "preflight"
+  },
+  {
+    "status": "failed",
+    "exit_code": -11,
+    "wall_seconds": 6.262240083888173,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "gist_entropy",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preflight_gist_entropy",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 536313856,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 147550,
+    "sampled_peak_disk_bytes": 147550,
+    "output_files": 3,
+    "os_wall_seconds": 6.09,
+    "user_seconds": 5.57,
+    "system_seconds": 0.22,
+    "os_peak_rss_bytes": 551911424,
+    "page_faults": 57,
+    "page_reclaims": 55133,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "gist_entropy",
+    "frames": 101,
+    "workers": "single",
+    "name": "preflight_gist_entropy",
+    "spacing": 0.5,
+    "padding": 5,
+    "kind": "preflight"
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 23.387862041126937,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_000_hsa_reduced_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 554713088,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 463824,
+    "sampled_peak_disk_bytes": 463824,
+    "output_files": 195,
+    "os_wall_seconds": 23.04,
+    "user_seconds": 22.41,
+    "system_seconds": 0.34,
+    "os_peak_rss_bytes": 553680896,
+    "page_faults": 57,
+    "page_reclaims": 60476,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_000_hsa_reduced_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.414478084,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.691496625,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.021418249999999972,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.018688250000000295,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.002366667000000433,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 15.274779958000002,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.014526249999999408,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 1
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 6.7579979579895735,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_001_hydrarank_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 179077120,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 170645,
+    "sampled_peak_disk_bytes": 170645,
+    "output_files": 9,
+    "os_wall_seconds": 6.42,
+    "user_seconds": 6.16,
+    "system_seconds": 0.1,
+    "os_peak_rss_bytes": 178438144,
+    "page_faults": 910,
+    "page_reclaims": 16375,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_001_hydrarank_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "n_sites": 21,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.415841584158414,
+        "warnings": [
+          "only 101 frames selected; per-site statistics will be noisy (a few thousand frames is a reasonable target)"
+        ]
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.22160249995067716,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.21223691711202264,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.5540556660853326,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 5.362532207742333,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.034353832714259624,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00015362491831183434,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007602502591907978,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.825026452541351e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0002565830945968628,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.337479084730148e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000252624973654747,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.15410166978836e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0002431245520710945,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.04997980594635e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000244291964918375,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.412489503622055e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00023854104802012444,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.670784205198288e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018708407878875732,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.120838224887848e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018154224380850792,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.087496876716614e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018462492153048515,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.737505853176117e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00016970792785286903,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.1416922360658646e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00015537487342953682,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.10411337018013e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00014708330854773521,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.9709342420101166e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013625016435980797,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.899967461824417e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013645784929394722,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.629138857126236e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012999959290027618,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.4292304664850235e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013329088687896729,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.2084138840436935e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012633297592401505,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.179216921329498e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012129219248890877,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.124967381358147e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011783279478549957,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.141591489315033e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012300023809075356,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 3.8667116314172745e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000112166628241539,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.00940895825624466,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.00021079229190945625,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.003220250364392996,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 6.755967458244413,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_002_hydrarank_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 178438144,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 170645,
+    "sampled_peak_disk_bytes": 170645,
+    "output_files": 9,
+    "os_wall_seconds": 6.27,
+    "user_seconds": 6.07,
+    "system_seconds": 0.09,
+    "os_peak_rss_bytes": 177422336,
+    "page_faults": 117,
+    "page_reclaims": 17047,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_002_hydrarank_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "n_sites": 21,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.415841584158414,
+        "warnings": [
+          "only 101 frames selected; per-site statistics will be noisy (a few thousand frames is a reasonable target)"
+        ]
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.21667316695675254,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.21450020791962743,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.5367352501489222,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 5.292782791890204,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.03298329096287489,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001150001771748066,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003777081146836281,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.512474596500397e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00025299983099102974,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.862512186169624e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00025250017642974854,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.066697046160698e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0002450002357363701,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.299993351101875e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00024416716769337654,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.33332708477974e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00023966701701283455,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.699981167912483e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00019349996000528336,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.15827739238739e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018191710114479065,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.0542020946741104e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018933415412902832,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.716690793633461e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00017037522047758102,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.191704258322716e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00017020804807543755,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.0833914428949356e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00015458418056368828,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.862481728196144e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0001366250216960907,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.9457885324954987e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013749999925494194,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.504062235355377e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013074977323412895,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.38750721514225e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0001333337277173996,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.158308729529381e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012733275070786476,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.174979403614998e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012283306568861008,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.145922139286995e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011791661381721497,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.095816984772682e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012249965220689774,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 3.958400338888168e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011370796710252762,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.00821266695857048,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 3.137486055493355e-05,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.003246375359594822,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 1
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 6.235981374979019,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_003_hydrarank_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 176390144,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 170652,
+    "sampled_peak_disk_bytes": 170652,
+    "output_files": 9,
+    "os_wall_seconds": 6.19,
+    "user_seconds": 6.02,
+    "system_seconds": 0.09,
+    "os_peak_rss_bytes": 175734784,
+    "page_faults": 117,
+    "page_reclaims": 16996,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_003_hydrarank_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "n_sites": 21,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.415841584158414,
+        "warnings": [
+          "only 101 frames selected; per-site statistics will be noisy (a few thousand frames is a reasonable target)"
+        ]
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.21924837492406368,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.20664262492209673,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.4940830003470182,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 5.2362822918221354,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.03216816717758775,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011258292943239212,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00037079211324453354,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.475035429000854e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00025504082441329956,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 8.258316665887833e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0002493751235306263,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.991679012775421e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00024137506261467934,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.858313620090485e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00024475017562508583,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 7.324991747736931e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0002337079495191574,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.629200652241707e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018745800480246544,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.229104474186897e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018316600471735,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 6.04996457695961e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00018754228949546814,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.766702815890312e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00016862479969859123,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.1584094762802124e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00015287520363926888,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 5.0833914428949356e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00014895806089043617,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.8416201025247574e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013629114255309105,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.77498397231102e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013566622510552406,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.5082997530698776e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013020820915699005,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.454236477613449e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00013245828449726105,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.187505692243576e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012750038877129555,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.1832681745290756e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012125028297305107,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.095910117030144e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011733314022421837,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 4.2582862079143524e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00012700026854872704,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 3.920821473002434e-05,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00011199992150068283,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.00808366620913148,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 3.0250288546085358e-05,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.0031472500413656235,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 2
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 24.70558650000021,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_004_hsa_reduced_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 543981568,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 463830,
+    "sampled_peak_disk_bytes": 463830,
+    "output_files": 195,
+    "os_wall_seconds": 24.45,
+    "user_seconds": 22.83,
+    "system_seconds": 0.49,
+    "os_peak_rss_bytes": 543539200,
+    "page_faults": 2520,
+    "page_reclaims": 76958,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_004_hsa_reduced_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.285161083,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.7535687089999996,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.02129575000000017,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.020050292000000525,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.002835708000002768,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 16.420407249999997,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.015551166999998145,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 23.919381957966834,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_005_hsa_reduced_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 528056320,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 463820,
+    "sampled_peak_disk_bytes": 463820,
+    "output_files": 195,
+    "os_wall_seconds": 23.53,
+    "user_seconds": 22.74,
+    "system_seconds": 0.34,
+    "os_peak_rss_bytes": 536248320,
+    "page_faults": 487,
+    "page_reclaims": 60663,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_005_hsa_reduced_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.546670875,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.7252983330000005,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.0215150830000006,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.01851441599999859,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.002255207999997566,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 15.52124225,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.01481141700000066,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 2
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 24.983770582824945,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_006_hsa_full_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 538574848,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 668598,
+    "sampled_peak_disk_bytes": 668598,
+    "output_files": 346,
+    "os_wall_seconds": 24.88,
+    "user_seconds": 24.14,
+    "system_seconds": 0.49,
+    "os_peak_rss_bytes": 538132480,
+    "page_faults": 489,
+    "page_reclaims": 62789,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_006_hsa_full_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.399629125,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.9099947080000002,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.021930333000000246,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.018275165999998677,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.002431333000000535,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 16.832032542,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.03074129100000178,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 1
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 24.434469542000443,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_007_hsa_full_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 538460160,
+    "peak_processes": 3,
+    "peak_threads": 4,
+    "output_bytes": 668606,
+    "sampled_peak_disk_bytes": 668606,
+    "output_files": 346,
+    "os_wall_seconds": 24.33,
+    "user_seconds": 23.65,
+    "system_seconds": 0.53,
+    "os_peak_rss_bytes": 538034176,
+    "page_faults": 74,
+    "page_reclaims": 68012,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_007_hsa_full_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.157947957999999,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.7192644589999997,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.021632416999999293,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.019504417000000274,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.0024987920000008046,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 16.899858958,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.040829374999997725,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 2
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 25.052696750033647,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_008_hsa_full_101_single",
+      "--frames",
+      "101",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 540622848,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 668597,
+    "sampled_peak_disk_bytes": 668597,
+    "output_files": 346,
+    "os_wall_seconds": 25.03,
+    "user_seconds": 24.05,
+    "system_seconds": 0.56,
+    "os_peak_rss_bytes": 540180480,
+    "page_faults": 474,
+    "page_reclaims": 67388,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 101,
+    "workers": "single",
+    "name": "trial_008_hsa_full_101_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 101,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 11.504950495049505
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.394940416,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 1.7755597500000002,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.022127959000002306,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.018719790999998764,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.0025039590000019984,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 17.1137735,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.03235745899999998,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 88.39583162497729,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_009_hsa_full_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 544014336,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 2595357,
+    "sampled_peak_disk_bytes": 2595357,
+    "output_files": 310,
+    "os_wall_seconds": 88.13,
+    "user_seconds": 86.09,
+    "system_seconds": 1.34,
+    "os_peak_rss_bytes": 543588352,
+    "page_faults": 492,
+    "page_reclaims": 77989,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_009_hsa_full_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.271394084,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.4482234579999993,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09519287500000928,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.06919504200000404,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.005231334000001198,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 79.681240583,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.04784433300000046,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 1
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 21.84431116702035,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_010_hydrarank_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 168886272,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 671742,
+    "sampled_peak_disk_bytes": 671742,
+    "output_files": 9,
+    "os_wall_seconds": 21.56,
+    "user_seconds": 20.87,
+    "system_seconds": 0.23,
+    "os_peak_rss_bytes": 169197568,
+    "page_faults": 936,
+    "page_reclaims": 19045,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_010_hydrarank_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "n_sites": 19,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.159680638722556,
+        "warnings": []
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.2245342922396958,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.20723662478849292,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.553710041102022,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 20.225851791910827,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.23497704230248928,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0008097919635474682,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0013501248322427273,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003871251828968525,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012745424173772335,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003678342327475548,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011630421504378319,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003554173745214939,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011982079595327377,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00036241719499230385,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011669169180095196,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00032850028946995735,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0010439157485961914,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00025400007143616676,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008399169892072678,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00023870915174484253,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007602917030453682,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00022091716527938843,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007214578799903393,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021345913410186768,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007164999842643738,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00020858412608504295,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007076249457895756,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002132081426680088,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006856666877865791,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001832079142332077,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005970830097794533,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00016395794227719307,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005304580554366112,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012900028377771378,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0004103332757949829,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012900028377771378,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0004333341494202614,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012999959290027618,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00038833310827612877,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011358316987752914,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003855000250041485,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011808332055807114,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003642910160124302,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.03055729065090418,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.000267083290964365,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.004512041807174683,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 2
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 82.71356404200196,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_011_hsa_reduced_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 536494080,
+    "peak_processes": 2,
+    "peak_threads": 3,
+    "output_bytes": 1620554,
+    "sampled_peak_disk_bytes": 1620554,
+    "output_files": 175,
+    "os_wall_seconds": 82.2,
+    "user_seconds": 80.79,
+    "system_seconds": 0.59,
+    "os_peak_rss_bytes": 536051712,
+    "page_faults": 2518,
+    "page_reclaims": 64203,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_011_hsa_reduced_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.230468416999999,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.3795544170000005,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09847899999999754,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07468970900001182,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.0038205409999960693,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 73.538319958,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.01851704199999915,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 2
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 21.31905358377844,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_012_hydrarank_501_native",
+      "--frames",
+      "501",
+      "--workers",
+      "native",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 185876480,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 671734,
+    "sampled_peak_disk_bytes": 671734,
+    "output_files": 9,
+    "os_wall_seconds": 21.3,
+    "user_seconds": 20.85,
+    "system_seconds": 0.24,
+    "os_peak_rss_bytes": 184844288,
+    "page_faults": 919,
+    "page_reclaims": 21649,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 501,
+    "workers": "native",
+    "name": "trial_012_hydrarank_501_native",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "n_sites": 19,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.159680638722556,
+        "warnings": []
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.2438998748548329,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.2632722081616521,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.6423967923037708,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 20.016143958084285,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.07750045787543058,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0004635830409824848,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011439588852226734,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003931247629225254,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000957041047513485,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000378625001758337,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000950333196669817,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003828341141343117,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0009614583104848862,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00037912512198090553,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0009076669812202454,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00033637508749961853,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008382918313145638,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00026904232800006866,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007482916116714478,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002404581755399704,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000790666788816452,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00022399984300136566,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007152082398533821,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021250033751130104,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006825840100646019,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002098330296576023,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000672417227178812,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021120905876159668,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006897910498082638,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00017974991351366043,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000637042336165905,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00016520777717232704,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006097089499235153,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012858305126428604,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005640829913318157,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001239171251654625,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005610417574644089,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00014512520283460617,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000583374872803688,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001143328845500946,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005904580466449261,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011404231190681458,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000545124989002943,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.029003874864429235,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.0003022090531885624,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.0048422920517623425,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 89.93480712501332,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_013_hsa_full_501_native",
+      "--frames",
+      "501",
+      "--workers",
+      "native",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 542048256,
+    "peak_processes": 2,
+    "peak_threads": 10,
+    "output_bytes": 2595356,
+    "sampled_peak_disk_bytes": 2595356,
+    "output_files": 310,
+    "os_wall_seconds": 89.92,
+    "user_seconds": 86.44,
+    "system_seconds": 2.9,
+    "os_peak_rss_bytes": 541622272,
+    "page_faults": 2519,
+    "page_reclaims": 86062,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 501,
+    "workers": "native",
+    "name": "trial_013_hsa_full_501_native",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.159603875,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.369585667000001,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09609158400000695,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07196641699999873,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.005546541000001071,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 81.316274041,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.05200520799999708,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 88.86833670828491,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_014_hsa_full_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 525008896,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 2595347,
+    "sampled_peak_disk_bytes": 2595347,
+    "output_files": 310,
+    "os_wall_seconds": 88.71,
+    "user_seconds": 86.33,
+    "system_seconds": 1.51,
+    "os_peak_rss_bytes": 543260672,
+    "page_faults": 480,
+    "page_reclaims": 92054,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_014_hsa_full_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.154921667,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.409708417,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09527799999999331,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07061312499999417,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.005030875000002766,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 79.978958,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.04814379200000474,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 2
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 83.13912762515247,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_015_hsa_reduced_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 537559040,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 1620541,
+    "sampled_peak_disk_bytes": 1620541,
+    "output_files": 175,
+    "os_wall_seconds": 82.92,
+    "user_seconds": 81.1,
+    "system_seconds": 0.66,
+    "os_peak_rss_bytes": 537116672,
+    "page_faults": 476,
+    "page_reclaims": 87180,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_015_hsa_reduced_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.173181958,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.610535916,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.10402162500000145,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07439495900000281,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.004205209000005539,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 74.270117875,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.016663416000000097,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 91.12914075003937,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_016_hsa_full_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 541196288,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 2595351,
+    "sampled_peak_disk_bytes": 2595351,
+    "output_files": 310,
+    "os_wall_seconds": 90.57,
+    "user_seconds": 87.04,
+    "system_seconds": 1.77,
+    "os_peak_rss_bytes": 540753920,
+    "page_faults": 87,
+    "page_reclaims": 106596,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_016_hsa_full_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.249429083,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.449500917,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09838641599999676,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07492554200000257,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.006036083999987341,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 81.877741125,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.051842624999991926,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 21.405225000344217,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_017_hydrarank_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 171212800,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 671737,
+    "sampled_peak_disk_bytes": 671737,
+    "output_files": 9,
+    "os_wall_seconds": 21.04,
+    "user_seconds": 20.15,
+    "system_seconds": 0.29,
+    "os_peak_rss_bytes": 170754048,
+    "page_faults": 916,
+    "page_reclaims": 19259,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_017_hydrarank_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "n_sites": 19,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.159680638722556,
+        "warnings": []
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.2310498752631247,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.2402751250192523,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.5392427500337362,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 19.568449082784355,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.2556371670216322,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0005648746155202389,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0017904173582792282,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0004032920114696026,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012543341144919395,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00036137504503130913,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.001163708046078682,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00035416707396507263,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012166667729616165,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003788340836763382,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011644582264125347,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003211251460015774,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0010437499731779099,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00025637494400143623,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008486667647957802,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00023850006982684135,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007734159007668495,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002254578284919262,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007265419699251652,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002155001275241375,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000714124646037817,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021058274433016777,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000719000119715929,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021312525495886803,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006877919659018517,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001894170418381691,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006110002286732197,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001666252501308918,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000545124989002943,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012850016355514526,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00041841575875878334,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012462493032217026,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00043962523341178894,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012541702017188072,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000391125213354826,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011366605758666992,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003905417397618294,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011583417654037476,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003659580834209919,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.030935917049646378,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.0002187499776482582,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.004573875106871128,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 1
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 83.66346016712487,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_018_hsa_reduced_501_native",
+      "--frames",
+      "501",
+      "--workers",
+      "native",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 540196864,
+    "peak_processes": 2,
+    "peak_threads": 10,
+    "output_bytes": 1620540,
+    "sampled_peak_disk_bytes": 2382455,
+    "output_files": 175,
+    "os_wall_seconds": 83.4,
+    "user_seconds": 81.13,
+    "system_seconds": 1.87,
+    "os_peak_rss_bytes": 539754496,
+    "page_faults": 2515,
+    "page_reclaims": 77955,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 501,
+    "workers": "native",
+    "name": "trial_018_hsa_reduced_501_native",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.041179708,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.426785667,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09625858299999379,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07434808399999326,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.00443937500000402,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 74.825838167,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.017567958000000772,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 84.45808358397335,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_019_hsa_reduced_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 525565952,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 1620546,
+    "sampled_peak_disk_bytes": 1620546,
+    "output_files": 175,
+    "os_wall_seconds": 84.17,
+    "user_seconds": 81.53,
+    "system_seconds": 0.76,
+    "os_peak_rss_bytes": 537296896,
+    "page_faults": 480,
+    "page_reclaims": 90774,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_019_hsa_reduced_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 17,
+        "mean_site_waters": 11.213572854291417
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.134536792,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 2.3810362080000003,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.09778637499999832,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.07196729199999652,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.004199458999991634,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 75.74692325,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.01668899999999951,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 1
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 20.25668350001797,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_020_hydrarank_501_single",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 177127424,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 671739,
+    "sampled_peak_disk_bytes": 671739,
+    "output_files": 9,
+    "os_wall_seconds": 20.05,
+    "user_seconds": 19.54,
+    "system_seconds": 0.23,
+    "os_peak_rss_bytes": 176095232,
+    "page_faults": 1209,
+    "page_reclaims": 18468,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 501,
+    "workers": "single",
+    "name": "trial_020_hydrarank_501_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "n_sites": 19,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.159680638722556,
+        "warnings": []
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.22824137518182397,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.22272429196164012,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.5052125840447843,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 18.628899083007127,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.23710549995303154,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000661166850477457,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.001683874987065792,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003794170916080475,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.001255124807357788,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003650002181529999,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011599580757319927,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003603748045861721,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012085000053048134,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00036562513560056686,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011666249483823776,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00032045878469944,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0010456247255206108,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00025183288380503654,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008377088233828545,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00024116691201925278,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007577082142233849,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002225828357040882,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007098750211298466,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021408312022686005,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007115411572158337,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00020966632291674614,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007555829361081123,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00025004101917147636,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000715416856110096,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000185416080057621,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006103748455643654,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00016449997201561928,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005319579504430294,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00013016676530241966,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0004096659831702709,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012541702017188072,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00043499981984496117,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012620771303772926,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003932081162929535,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011345930397510529,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00039133336395025253,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011516734957695007,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00039666611701250076,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.03072408400475979,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.0002255002036690712,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.004555125255137682,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 37.74056970793754,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_021_hydrarank_1001_single",
+      "--frames",
+      "1001",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 158400512,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 1298890,
+    "sampled_peak_disk_bytes": 1298890,
+    "output_files": 9,
+    "os_wall_seconds": 37.72,
+    "user_seconds": 36.51,
+    "system_seconds": 0.39,
+    "os_peak_rss_bytes": 159367168,
+    "page_faults": 124,
+    "page_reclaims": 32584,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hydrarank",
+    "frames": 1001,
+    "workers": "single",
+    "name": "trial_021_hydrarank_1001_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 1001,
+        "n_sites": 20,
+        "cache_reused": false,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.092907092907094,
+        "warnings": []
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.22424579178914428,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.22565425001084805,
+          "depth": 0
+        },
+        {
+          "name": "prepare_system",
+          "seconds": 1.900013166014105,
+          "depth": 1
+        },
+        {
+          "name": "run_preprocess",
+          "seconds": 36.0312451669015,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.5539187090471387,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0008349581621587276,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0028659161180257797,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0007819999009370804,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0023880000226199627,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000755916815251112,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0024037500843405724,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000751749612390995,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.002456790767610073,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0007499158382415771,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0023182909935712814,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0006562918424606323,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0020884168334305286,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0005766670219600201,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0019224160350859165,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0005229576490819454,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0016582501120865345,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0005009579472243786,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0015531671233475208,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00045945774763822556,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.001535582821816206,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0003887079656124115,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012825001031160355,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000386000145226717,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012512500397861004,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.000365458894520998,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012254170142114162,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002709170803427696,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008919159881770611,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002687089145183563,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.000889334362000227,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00026520900428295135,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008383328095078468,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002638748846948147,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008911248296499252,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0002355417236685753,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007428750395774841,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021745776757597923,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007650828920304775,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00019975006580352783,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007085832767188549,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.05776412505656481,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 4.612468183040619e-05,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.007431709207594395,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 179.85355508420616,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_full",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_022_hsa_full_1001_single",
+      "--frames",
+      "1001",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 535543808,
+    "peak_processes": 2,
+    "peak_threads": 3,
+    "output_bytes": 5416160,
+    "sampled_peak_disk_bytes": 5416160,
+    "output_files": 346,
+    "os_wall_seconds": 179.52,
+    "user_seconds": 175.84,
+    "system_seconds": 2.44,
+    "os_peak_rss_bytes": 539607040,
+    "page_faults": 2561,
+    "page_reclaims": 77875,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_full",
+    "frames": 1001,
+    "workers": "single",
+    "name": "trial_022_hsa_full_1001_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 1001,
+        "flags": {
+          "energy": true,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 12.08991008991009
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.058012000000001,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 3.177732666999999,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.19072570800000221,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.15473349999999186,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.009165959000000612,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 170.042052375,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.08809883299997523,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 167.55816283402964,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/.env/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hsa_reduced",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_023_hsa_reduced_1001_single",
+      "--frames",
+      "1001",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 526745600,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 3300774,
+    "sampled_peak_disk_bytes": 3300774,
+    "output_files": 195,
+    "os_wall_seconds": 167.5,
+    "user_seconds": 164.82,
+    "system_seconds": 0.99,
+    "os_peak_rss_bytes": 539115520,
+    "page_faults": 504,
+    "page_reclaims": 94679,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "mode": "hsa_reduced",
+    "frames": 1001,
+    "workers": "single",
+    "name": "trial_023_hsa_reduced_1001_single",
+    "spacing": 0.5,
+    "padding": 5,
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 1001,
+        "flags": {
+          "energy": false,
+          "entropy": true,
+          "hbonds": true
+        },
+        "n_sites": 19,
+        "mean_site_waters": 12.08991008991009
+      },
+      "stages": [
+        {
+          "name": "initialization",
+          "seconds": 4.044971250000001,
+          "depth": 0
+        },
+        {
+          "name": "clustering",
+          "seconds": 3.480365666,
+          "depth": 0
+        },
+        {
+          "name": "generate_data_for_entropycalcs",
+          "seconds": 0.20400629099998469,
+          "depth": 1
+        },
+        {
+          "name": "run_entropy_scripts",
+          "seconds": 0.15784783299997684,
+          "depth": 1
+        },
+        {
+          "name": "normalize_site_quantities",
+          "seconds": 0.00625445899999022,
+          "depth": 1
+        },
+        {
+          "name": "site_quantities",
+          "seconds": 158.043504292,
+          "depth": 0
+        },
+        {
+          "name": "export",
+          "seconds": 0.024278334000001678,
+          "depth": 0
+        }
+      ]
+    },
+    "kind": "benchmark",
+    "repeat": 0
+  },
+  {
+    "status": "complete",
+    "exit_code": 0,
+    "wall_seconds": 1.5642804158851504,
+    "command": [
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/cache_worker.py",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/trial_010_hydrarank_501_single/results/observations.npz",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/.venv/bin/python",
+      "-B",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/comparison/performance/adapter.py",
+      "--mode",
+      "hydrarank",
+      "--output",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/cached_hydrarank_501",
+      "--frames",
+      "501",
+      "--workers",
+      "single",
+      "--spacing",
+      "0.5",
+      "--padding",
+      "5",
+      "--inputs",
+      "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation"
+    ],
+    "monitored": true,
+    "sampled_tree_peak_rss_bytes": 145260544,
+    "peak_processes": 2,
+    "peak_threads": 2,
+    "output_bytes": 671395,
+    "sampled_peak_disk_bytes": 671395,
+    "output_files": 9,
+    "os_wall_seconds": 1.33,
+    "user_seconds": 1.05,
+    "system_seconds": 0.09,
+    "os_peak_rss_bytes": 144949248,
+    "page_faults": 943,
+    "page_reclaims": 15505,
+    "block_inputs": 0,
+    "block_outputs": 0,
+    "kind": "cached",
+    "mode": "hydrarank",
+    "frames": 501,
+    "workers": "single",
+    "name": "cached_hydrarank_501",
+    "adapter": {
+      "status": "complete",
+      "result": {
+        "actual_frames": 501,
+        "n_sites": 19,
+        "cache_reused": true,
+        "n_fit_atoms": 61,
+        "mean_shell_waters": 18.159680638722556,
+        "warnings": []
+      },
+      "stages": [
+        {
+          "name": "load_universe",
+          "seconds": 0.2303817910142243,
+          "depth": 0
+        },
+        {
+          "name": "describe_system",
+          "seconds": 0.23422945896163583,
+          "depth": 0
+        },
+        {
+          "name": "cluster_hydration_sites",
+          "seconds": 0.2374847079627216,
+          "depth": 0
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0006104581989347935,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0016316669061779976,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00037895794957876205,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0014099166728556156,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00039562489837408066,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012625842355191708,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00035854196175932884,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0012195422314107418,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0004035830497741699,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0011797500774264336,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00031687505543231964,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0010489169508218765,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00025512510910630226,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0008349171839654446,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00024524983018636703,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007677078247070312,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00022183312103152275,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007115420885384083,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021508289501070976,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007131663151085377,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00023112492635846138,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0007543750107288361,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00021187495440244675,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006801248528063297,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00018070824444293976,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0006105001084506512,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00016412511467933655,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005221250467002392,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00017187511548399925,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0005772500298917294,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.0001360420137643814,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00045608310028910637,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00013520894572138786,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0003996659070253372,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00011704163625836372,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.0004025832749903202,
+          "depth": 1
+        },
+        {
+          "name": "translational_entropy",
+          "seconds": 0.00012300023809075356,
+          "depth": 1
+        },
+        {
+          "name": "orientational_entropy",
+          "seconds": 0.00040958309546113014,
+          "depth": 1
+        },
+        {
+          "name": "analyse_sites",
+          "seconds": 0.030143334064632654,
+          "depth": 0
+        },
+        {
+          "name": "rank_sites",
+          "seconds": 0.00102237518876791,
+          "depth": 0
+        },
+        {
+          "name": "_write_artifacts",
+          "seconds": 0.004951917100697756,
+          "depth": 0
+        }
+      ]
+    }
+  }
+]

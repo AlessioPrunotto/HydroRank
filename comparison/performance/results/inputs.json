@@ -1,0 +1,357 @@
+[
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/step5.tpr",
+    "bytes": 2583264,
+    "sha256": "278ab93301de28869d56bf03bf4730c9794567d3bce473b497466e90fc6fba1a"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/step5.xtc",
+    "bytes": 5380329328,
+    "sha256": "eb42b96d254046b0b32a2ca0c1afa03f1600677fa31c36211e8642b531c2a5e8"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/input/3rlp_sstmap_topology.gro",
+    "bytes": 2827054,
+    "sha256": "010f3994ca762081c4283f0d35333c5b248b30278eb25573d1f0a3af05d64bb7"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sstmap_analysis/3rlp/input/3rlp_hydrarank61_aligned.xtc",
+    "bytes": 5471495108,
+    "sha256": "7f74334a042c4fd8f606dcf468d3dc1dcdbb29cdd7955dc51682090899e66e3e"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/topol.top",
+    "bytes": 501,
+    "sha256": "54c40976b9a910971a18cfa5265d56b8b3b5859e1e28ff60ef146c513c60250e"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/toppar/PROB.itp",
+    "bytes": 1895082,
+    "sha256": "5871645fb36a56e23d83fc45cdb9db044cd89ee88d698652fa708b3657bdb495"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/toppar/OPC.itp",
+    "bytes": 884,
+    "sha256": "bde96661d689be2a67bfc1d5227d88381952e5dcff68e6926094a70386c7fd41"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/toppar/Na+.itp",
+    "bytes": 334,
+    "sha256": "165b96e5e7f22bf1c82b01d88db4573ea6b91faa94714d340aa3fc1d797e6356"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/toppar/forcefield.itp",
+    "bytes": 129766,
+    "sha256": "63b15d45b359572179b39f3ae3f61af0f08bf52669dff63735a009cda42932d6"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/toppar/3RP.itp",
+    "bytes": 8959,
+    "sha256": "be79e4337c996c3c7717afec04fb4e62c73803eac0a3564226e6bf4b9520220f"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/toppar/Cl-.itp",
+    "bytes": 334,
+    "sha256": "016f60fcdb36157f20ce0d348d6d05f538f45e7fbcfeb33251e8258659adf108"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/top_all36_cgenff.rtf",
+    "bytes": 6487679,
+    "sha256": "8666b3b93808c9a1a1a4693cf71d0fa9b81e9df554f6a8597cca93ef326a6fca"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_arg0.str",
+    "bytes": 16385,
+    "sha256": "e9350291337018eceeefb3ad4f1aeba292a6f6ecad007dc7a230e0a442913efc"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_polymer_solvent.str",
+    "bytes": 20094,
+    "sha256": "a1a61cc2bdc92a10cd404d13c4e7f13f064e622d16f4435a28695350491c23fa"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_archaeal.str",
+    "bytes": 542539,
+    "sha256": "73e1754b7e6bc2c1540d42e99440e12b2e7b281ff599c2c18e63effa835d3f36"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/par_all36_cgenff.prm",
+    "bytes": 3614279,
+    "sha256": "7c4aeda0b61179b4a834db1db5e946341d7114dc7ad381c6ee53a7a4da398eab"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_inositol.str",
+    "bytes": 1702848,
+    "sha256": "76714d49509fa7495b43c2d3a018fc0fa3b1070f70f1ab46835c4ff7ad841ee0"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_nano_lig_patch.str",
+    "bytes": 277644,
+    "sha256": "8f8f51289aab251fcd4f875e5e858e8582b14cd54eeb5a668e451763c8cdd6a9"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_dag.str",
+    "bytes": 379557,
+    "sha256": "c4eb6c7f35dc18034ec248cf55a38d02ccd205c5d8e224d17c5f0ab5e509e638"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_synthetic_polymer_patch.str",
+    "bytes": 1351654,
+    "sha256": "9d77adc0b343c194b0436564c89973b6ce528d85ed391c40629d39a1901a666b"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_sphingo.str",
+    "bytes": 512949,
+    "sha256": "1085a86ce0b8c2b912981c80c2e590ccd968117325d2d820154f72a8f18ea247"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/top_all36_na.rtf",
+    "bytes": 38114,
+    "sha256": "6e315be570d8c3c57f990b06eeafbb82a09bf27c1db8110358366705e5fd2ec6"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_model.str",
+    "bytes": 104324,
+    "sha256": "b948148d342d7163ee0f8dcf02dca76639920a30acdcbac61441df8518d65595"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_fluoro_alkanes.str",
+    "bytes": 9779,
+    "sha256": "d52674df113b10edf60819115b0b39db9a1aa21d20cdf15fb316391ea0b489fe"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/top_all36_carb.rtf",
+    "bytes": 292976,
+    "sha256": "fab33a8119d064c4d0a46195e483728ae68a1b1e0b223323378c6c6e04f19b8d"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_yeast.str",
+    "bytes": 163497,
+    "sha256": "b84c529326335d0af11ec3cb948502702fdef821025efd085d2bf9579218017f"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_lnp.str",
+    "bytes": 878185,
+    "sha256": "5575aa4c01304ea16581b02589826459dff6c0ca758f51519a9dffb6be3837c9"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_detergent.str",
+    "bytes": 1051867,
+    "sha256": "b20c58f6718a8ad5460a72d4da3219b3e2eeba8749ad9da0ce6e6a12141d0a0b"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/top_interface.rtf",
+    "bytes": 587196,
+    "sha256": "6a59c407f079a1847f93cd1fd941a43084c1ca6c3a895a58c6659cca395970b9"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_hmmm.str",
+    "bytes": 2384,
+    "sha256": "326e509d26cfb3d6e7c3f2044c808670f77efe1c810eaf8db5ac76f2dda14cec"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_c36m_d_aminoacids.str",
+    "bytes": 116933,
+    "sha256": "d2b6ab91e0c13af26815dd69a916999de809a7b0c946e4081e731940ce86a4ca"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/top_all36_lipid.rtf",
+    "bytes": 635639,
+    "sha256": "0c590ca40ebdd274bb87ac41f5fefe81134e737bbebcd4010bd2d55d0ddb429c"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_carb_glycolipid.str",
+    "bytes": 1448558,
+    "sha256": "67fba09c91c5834deff263035c869f4f2c2d6f4065ed52461020e5a6ae0b6a2c"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/par_all36_lipid.prm",
+    "bytes": 28988,
+    "sha256": "6b5ab3e2d433303188dfd8f2f89a192142e7caa5aa97e79ca8ba0084076ff302"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_prot.str",
+    "bytes": 74022,
+    "sha256": "29a31713d06a34a82755f26b293d23d29e3ceb3e8166d57761c3d3acad1fde7b"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_moreions.str",
+    "bytes": 6126,
+    "sha256": "b2de0e9aa7ea62eaeccca7485f872002bc414405a12d383e1cb9b053296c0b2a"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_retinol.str",
+    "bytes": 79456,
+    "sha256": "40d5adbbbe8e3823c020c826dd154da64940f7c592bd32ef15470ed8ed84a18e"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_heme.str",
+    "bytes": 26130,
+    "sha256": "4b3c916e8bcd12c65250bee7e264b942900acd20d29673de651c78772b49d302"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_carb_imlab.str",
+    "bytes": 1426345,
+    "sha256": "bc2786a228912da26f31bfb1506015a98f0057ab9b0192275ce9b424e7ea31fb"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_ions_won.str",
+    "bytes": 15492,
+    "sha256": "b771f22b9d23f8e0c1dd094a0f47ae84e4c9638d4ab1314c7b51e69f148330c6"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_lps.str",
+    "bytes": 2250990,
+    "sha256": "6e29b42a7c8b7839f6a72268b3b0edae99ea8ad6b01b34b82fb8d669bbaa08fc"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_model.str",
+    "bytes": 89232,
+    "sha256": "512e94f03e5ec66cac4058af9a66761912d3e714c2a569b457c1e3284399524f"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/par_all36_na.prm",
+    "bytes": 64728,
+    "sha256": "5532b443190e6a3081f2571c2ab3de07f4384b9fc4bb18e552450275aff04af0"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_oxidized.str",
+    "bytes": 1149614,
+    "sha256": "04931bbb8ec3c1754e130b1ccd5abe11d3f0af520b71685a812cb8192a8fa50b"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/tip216.crd",
+    "bytes": 33459,
+    "sha256": "ae572b9e1ceb2c6460b7db41fedd1fba3c083ff96533d5f4525aaf3a7020d3fc"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_water_ions.str",
+    "bytes": 12242,
+    "sha256": "41c6474470fa66e927198582a314f9e390cd6bf6fbd1449475d35e3346d72bdc"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_label_fluorophore.str",
+    "bytes": 323911,
+    "sha256": "7abf948bac985d397e4f1ad9c21e04363a5059ad6b18127869366667f628cdb2"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_na_rna_modified.str",
+    "bytes": 1174792,
+    "sha256": "73c47d78b89964d484677ffa9640d5d15cbe0688705b13945ce7f74eb7d5efbb"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_synthetic_polymer.str",
+    "bytes": 260174,
+    "sha256": "064bf868bf62571a4787b37d52557b63975d065009df40d7a0cb5a2b7e50e10c"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_na_nad_ppi.str",
+    "bytes": 195710,
+    "sha256": "d952da4660ca8774f91774f4b3c9465adb776c55ee4416e00776934cefd06951"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/par_all36_carb.prm",
+    "bytes": 160439,
+    "sha256": "87ab6ada08b2e898f7dba1e4b4a562e73ae564cb652b36b0a8c56b8372adde88"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_tag.str",
+    "bytes": 1221021,
+    "sha256": "e0f703fbdb8621b4f88be5fa2852efa228bfd2026855a6572197c6650709866a"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_carb_glycopeptide.str",
+    "bytes": 24629,
+    "sha256": "b31d4a99f343f6da2cda43330cd080cac6255133b666c87342dca108c7341118"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_bacterial.str",
+    "bytes": 620300,
+    "sha256": "827e93c2e8d994c6dbf38456fd58f2c3f060b22fb730beffd0a45d002de0409a"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_ether.str",
+    "bytes": 472917,
+    "sha256": "21cb1daf92d683957044667e22eb37ac07d281ac024dbb1c739274c95dd80029"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/par_interface.prm",
+    "bytes": 128049,
+    "sha256": "9bccd9a44bf98e026193970c94d6471ff4dcb7bff8ece5b0d5b5e5472d2e04a4"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_label_spin.str",
+    "bytes": 180648,
+    "sha256": "29764165f14d8ac11c727398bbfe3d4278e242e938d16745c1341aa308a8387b"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_modify_res.str",
+    "bytes": 1861262,
+    "sha256": "c2fcbeaf39bd4779d83f116d7cea5f4bf1234156a00d9323b5c84bcc4be1545c"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/top_all36_prot.rtf",
+    "bytes": 73053,
+    "sha256": "ef779d08f2929acfce7d0d2867b3d8d74794da684d3484527d43e0bfe52de574"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_mycobacterial.str",
+    "bytes": 1033403,
+    "sha256": "412e403cf528d4f9f90cd21688f5fa446be6303610b47da560efeabbb70531f2"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_cholesterol.str",
+    "bytes": 258684,
+    "sha256": "aeb9073d504b79b03123de680d6797768c9edf3ffe145807abaad95301605436"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_cardiolipin.str",
+    "bytes": 893524,
+    "sha256": "868395a4f8eeef94fa6a1f761f8f187075176aeb9454ce4f4a074eb7f5550f2b"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_nano_lig.str",
+    "bytes": 11135,
+    "sha256": "673bf2788ef3829285fd11174fef9d730401f7a9f643cd414d1151a44c9a55c5"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_lipid_miscellaneous.str",
+    "bytes": 2201419,
+    "sha256": "4c21f21c8209c16e9f70eee342d8f22bf20d608dc0e61ed687670ed00582df66"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/cam.str",
+    "bytes": 1842,
+    "sha256": "7e0c792239ce39709b697ccc46102cdc369ab2e61ad8b193655303fdef7befac"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_dum_noble_gases.str",
+    "bytes": 1468,
+    "sha256": "8f756f0d4cf38e5c7d98d641e74938a36c8da872cffcdfc6a3743363475a59e7"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/par_all36m_prot.prm",
+    "bytes": 181061,
+    "sha256": "b1d1c70b5f350a2d5758bf3ce7ec86e50cdc3f69d8cc3097f98f279cdaeb5aaa"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/sample_traj/3rlp/charmm-gui-8947372302/gromacs/../toppar/toppar_all36_prot_na_combined.str",
+    "bytes": 80028,
+    "sha256": "dddc2efdf9a6288de5c042da4af19e37366b1368c8f5d6a010df15964b1f932d"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation/aligned.xtc",
+    "bytes": 217587316,
+    "sha256": "681667b4e1e239dadadb766d0df75687d31a5249fbba47a2457907e3a759d358"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation/raw.xtc",
+    "bytes": 215433272,
+    "sha256": "cf60b3e7d87db790a80e4cece9d3ebea1316d97980cfc177c6e9b87cda373ffd"
+  },
+  {
+    "path": "/Users/aprunotto/Documents/alessio-code/water-entropy/output/performance/pilot-20261008/preparation/ligand.pdb",
+    "bytes": 1990,
+    "sha256": "9b7115e01db0845e82c208d69f35d143d30648a9c3c45eb27896be9ac830f491"
+  }
+]

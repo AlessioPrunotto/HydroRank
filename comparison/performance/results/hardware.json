@@ -1,0 +1,18 @@
+{
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "cpu_count": 8,
+  "physical_ram_bytes": 17179869184,
+  "model": "Mac14,2",
+  "git_head": "58151b330be19e8009511380682829fdcd75c4e5",
+  "git_diff": "diff --git a/src/hydrarank/config.py b/src/hydrarank/config.py\nindex c1af8d5..7b0e715 100644\n--- a/src/hydrarank/config.py\n+++ b/src/hydrarank/config.py\n@@ -11,9 +11,9 @@ import yaml\n \n from hydrarank.exceptions import HydraRankError\n \n-#: Residue names used for water by the common force fields / MD engines.\n-#: Deliberately explicit: MDAnalysis' and MDTraj's built-in ``water`` keywords\n-#: do not know about OPC, which silently yields empty selections.\n+# Residue names used for water by the common force fields / MD engines.\n+# I made this explicit because MDAnalysis' and MDTraj's built-in ``water``\n+# keywords do not know about OPC, which silently yields empty selections.\n DEFAULT_WATER_RESNAMES: tuple[str, ...] = (\n     \"HOH\",\n     \"WAT\",\n",
+  "source_hashes": {
+    "comparison/performance/run.py": "57f9944d6b9672023c0acb4edb66d21003b4433f14947f0c89be8163f8d21d49",
+    "comparison/performance/monitor.py": "9fa5de11197a8891a95a763d80ae35d9d83f70b0eb2840a1023d76b8b6a19d59",
+    "comparison/performance/test_harness.py": "3a7be083b584bf40bb00e2e822f708455433a4f7794b6e208d464ff00ca2937f",
+    "comparison/performance/adapter.py": "aa63d0ed744013a62cb8d47006baa460809190ff6dc28193e92498930f54a1a8",
+    "comparison/performance/cache_worker.py": "0cfc9c7c2c47f57613add6431a5ba8d3a902b5341704c4ba43e9fc0a09088255",
+    "comparison/performance/common.py": "ecd68f77e72da862993d294a4310ef1bd6dace4ea61c1dcdaf3a449d403d499e"
+  },
+  "filesystem_cache": "untimed prefix read; no cache purge",
+  "sample_interval_seconds": 0.5
+}

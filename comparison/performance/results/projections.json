@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "hsa_full",
+    "full_run_linear_seconds": 4483.695824175825,
+    "full_run_planning_upper_seconds": 8967.39164835165,
+    "scaling_campaign_linear_seconds": 23730.535384615385
+  },
+  {
+    "mode": "hsa_reduced",
+    "full_run_linear_seconds": 4183.484015984016,
+    "full_run_planning_upper_seconds": 8366.968031968032,
+    "scaling_campaign_linear_seconds": 22141.625874125875
+  },
+  {
+    "mode": "hydrarank",
+    "full_run_linear_seconds": 942.0956243756243,
+    "full_run_planning_upper_seconds": 1884.1912487512486,
+    "scaling_campaign_linear_seconds": 4986.161958041958
+  }
+]

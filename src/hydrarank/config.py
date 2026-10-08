@@ -11,9 +11,9 @@ import yaml
 
 from hydrarank.exceptions import HydraRankError
 
-#: Residue names used for water by the common force fields / MD engines.
-#: Deliberately explicit: MDAnalysis' and MDTraj's built-in ``water`` keywords
-#: do not know about OPC, which silently yields empty selections.
+# Residue names used for water by the common force fields / MD engines.
+# I made this explicit because MDAnalysis' and MDTraj's built-in ``water``
+# keywords do not know about OPC, which silently yields empty selections.
 DEFAULT_WATER_RESNAMES: tuple[str, ...] = (
     "HOH",
     "WAT",
